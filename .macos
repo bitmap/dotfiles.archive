@@ -102,6 +102,9 @@ defaults write com.apple.helpviewer DevMode -bool true
 # in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
+# Display custom message on login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "🖕"
+
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
 
