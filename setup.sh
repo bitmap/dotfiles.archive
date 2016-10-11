@@ -6,6 +6,8 @@ git pull origin master;
 
 function doIt() {
 	rsync --exclude ".git/" \
+    --exclude "fonts/" \
+    --exclude "iterm/" \
 		--exclude ".DS_Store" \
 		--exclude "setup.sh" \
 		-avh --no-perms . ~;
