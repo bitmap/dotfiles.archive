@@ -4,9 +4,13 @@ alias l="ls -lF -G" # all files, in long format
 alias la="ls -laF -G" # all files inc dotfiles, in long format
 alias lsd='ls -lF -G | grep "^d"' # only directories
 
+# quick clear
+alias x="clear"
+
 # quick nav
 alias ~="cd ~"
 alias ..="cd .."
+alias dev="cd ~/dev"
 
 # sudo aliases
 alias sudo='sudo '
