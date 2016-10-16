@@ -17,7 +17,7 @@ alias sudo="sudo "
 # git aliases
 alias g="git"
 alias gs="git status"
-alias gl="git log --pretty=format:"%h %s" --graph"
+alias gl="git log --pretty=format:'%h %s' --graph"
 alias ga="git add ."
 alias gc="git commit -m" # requires you to type a commit message
 alias gp="git pull"
