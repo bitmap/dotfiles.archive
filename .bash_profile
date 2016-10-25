@@ -40,8 +40,12 @@ function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 # shortcut to dev folder
 function dev () { cd ~/dev/"$@"; }
 
-# PATH for npm
-export PATH="$HOME/.npm-packages/bin:$PATH"
+# PATH for npm [DEPRECATED - PREFER NVM]
+# export PATH="$HOME/.npm-packages/bin:$PATH"
+
+# This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 ### Prompt
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
