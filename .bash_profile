@@ -27,8 +27,8 @@ alias gg="git push"
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+# print PATH entries
+alias path='echo -e ${PATH//:/\\n}'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
