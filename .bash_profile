@@ -40,6 +40,9 @@ function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 # shortcut to dev folder
 function dev () { cd ~/dev/"$@"; }
 
+# kill port
+function killport () { lsof -n -i4TCP:"$@" | grep LISTEN | tr -s " " | cut -f 2 -d " " | xargs kill -9; }
+
 # PATH for npm [DEPRECATED - PREFER NVM]
 # export PATH="$HOME/.npm-packages/bin:$PATH"
 
