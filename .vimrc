@@ -1,4 +1,4 @@
-colorscheme base16-default-dark
+" colorscheme base16-default-dark
 
 " enter the current millenium
 set nocompatible

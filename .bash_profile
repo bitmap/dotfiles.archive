@@ -3,6 +3,7 @@ alias ls="command ls -G"
 alias l="ls -lF -G" # all files, in long format
 alias la="ls -laF -G" # all files inc dotfiles, in long format
 alias lsd='ls -lF -G | grep "^d"' # only directories
+alias ll="ls -alS"
 
 # quick clear
 alias x="clear"
@@ -10,6 +11,9 @@ alias x="clear"
 # quick nav
 alias ~="cd ~"
 alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 # sudo aliases
 alias sudo="sudo "
@@ -18,7 +22,7 @@ alias sudo="sudo "
 alias g="git"
 alias gs="git status"
 alias gl="git log --pretty=format:'%h %s' --graph"
-alias ga="git add ."
+alias ga="git add"
 alias gc="git commit -m" # requires you to type a commit message
 alias gp="git pull"
 alias gg="git push"
