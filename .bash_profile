@@ -153,14 +153,10 @@ fi;
 # Set the terminal title and prompt.
 PS1="\[\033]0;\W\007\]"; # working directory base name
 PS1+="\n"; # newline
-# PS1+="\[${userStyle}\]\u"; # username
-# PS1+="\[${white}\]@";
-# PS1+="\[${hostStyle}\]\h"; # host
-# PS1+="\[${white}\] : ";
-PS1+="\[${green}\]\w"; # working directory full path
-PS1+="\$(prompt_git \"\[${white}\] : \[${yellow}\]\" \"\[${blue}\]\")"; # Git repository details
-# PS1+="\n";
-PS1+="\[${white}\] → ";
+PS1+="\[${blue}\]\w"; # working directory full path
+PS1+="\$(prompt_git \"\[${reset}\] : \[${yellow}\]\" \"\[${magenta}\]\")"; # Git repository details
+PS1+="\n"; # newline
+PS1+="\[${yellow}\]→ \[${white}\]"; # prompt
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
