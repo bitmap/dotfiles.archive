@@ -8,25 +8,29 @@ These are my preferences.
 - Install [iTerm](https://www.iterm2.com/downloads.html)
 - Install [Atom](https://atom.io/download/mac)
 - Install `brew`
-```
+```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 - Install `nvm`
-```
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+```sh
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 ```
 - Install `node`
-```
+```sh
 nvm install node
+
+### install LTS version and set as default
+nvm install --lts
+nvm alias default lts/*
 ```
 - Setup dotfiles
-```
+```sh
 git clone https://github.com/bitmap/dotfiles
 cd dotfiles
 ./setup.sh
 ```
 - Setup macOS
-```
+```sh
 ./.macos
 ```
 ----------
