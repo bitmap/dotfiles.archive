@@ -15,7 +15,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-# sudo aliases
+# sudo alias
 alias sudo="sudo "
 
 # git aliases
@@ -24,8 +24,22 @@ alias gs="git status"
 alias gl="git log --pretty=format:'%h %s' --graph"
 alias ga="git add"
 alias gc="git commit -m" # requires you to type a commit message
+alias gd="git diff -w"
+alias gf="git fetch"
 alias gp="git pull"
 alias gg="git push"
+
+# node aliases
+alias npmg="npm list -g --depth=0" # list globals
+
+# put computer to sleep
+alias zzz="pmset sleepnow"
+
+# restart
+alias restart="osascript -e 'tell app \"System Events\" to restart'"
+
+# update hosts
+alias update-hosts="cd ~/hosts/; git pull; python updateHostsFile.py"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -36,7 +50,7 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
+alias lip="ipconfig getifaddr en0"
 
 # mkdir and cd function
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
@@ -47,14 +61,17 @@ function dev () { cd ~/dev/"$@"; }
 # kill port
 function killport () { lsof -n -i4TCP:"$@" | grep LISTEN | tr -s " " | cut -f 2 -d " " | xargs kill -9; }
 
-# PATH for npm [DEPRECATED - PREFER NVM]
+# PATH for npm [deprecated - use 'nvm' instead]
 # export PATH="$HOME/.npm-packages/bin:$PATH"
 
 # This loads nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-### Prompt
+# This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Prompt
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
   export TERM="gnome-256color";
 elif infocmp xterm-256color >/dev/null 2>&1; then
@@ -136,28 +153,14 @@ else
   white="\e[1;37m";
 fi;
 
-# Highlight the user name when logged in as root.
-if [[ "${USER}" == "root" ]]; then
-  userStyle="${red}";
-else
-  userStyle="${orange}";
-fi;
-
-# Highlight the hostname when connected via SSH.
-if [[ "${SSH_TTY}" ]]; then
-  hostStyle="${red}";
-else
-  hostStyle="${yellow}";
-fi;
-
 # Set the terminal title and prompt.
 PS1="\[\033]0;\W\007\]"; # working directory base name
 PS1+="\n"; # newline
 PS1+="\[${blue}\]\w"; # working directory full path
 PS1+="\$(prompt_git \"\[${reset}\] : \[${yellow}\]\" \"\[${magenta}\]\")"; # Git repository details
 PS1+="\n"; # newline
-PS1+="\[${yellow}\]→ \[${white}\]"; # prompt
+PS1+="\[${green}\]$ \[${reset}\]"; # prompt
 export PS1;
 
-PS2="\[${yellow}\]→ \[${reset}\]";
+PS2="\[${yellow}\]$ \[${reset}\]";
 export PS2;
