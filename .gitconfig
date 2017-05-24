@@ -1,12 +1,15 @@
 [user]
   name = Cabe Branson
-  email = caleb.branson@gmail.com
+  email = cabebranson@gmail.com
 [alias]
   st = status
   ci = commit
   br = branch
-  ch = checkout
+  co = checkout
   ls = ls-files
+  df = diff
+  rs = reset
+  fucked = reset HEAD --hard
 [core]
   # Use custom `.gitignore`
   excludesfile = ~/.gitignore
