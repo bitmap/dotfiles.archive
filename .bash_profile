@@ -165,4 +165,6 @@ export PS1;
 PS2="\[${yellow}\]$ \[${reset}\]";
 export PS2;
 
+eval "$(thefuck --alias)"
+
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
