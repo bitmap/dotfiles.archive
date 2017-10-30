@@ -61,6 +61,9 @@ function dev () { cd ~/dev/"$@"; }
 # kill port
 function killport () { lsof -n -i4TCP:"$@" | grep LISTEN | tr -s " " | cut -f 2 -d " " | xargs kill -9; }
 
+# clone from "github.com/bitmap"
+function bitmap () { git clone https://github.com/bitmap/"$@".git; }
+
 # PATH for npm [deprecated - use 'nvm' instead]
 # export PATH="$HOME/.npm-packages/bin:$PATH"
 

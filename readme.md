@@ -7,21 +7,25 @@ These are my preferences.
 - Install Xcode + command-line tools (this also installs `git`)
 - Install [iTerm](https://www.iterm2.com/downloads.html)
 - Install [Atom](https://atom.io/download/mac)
-- Install `brew`
+- Install [Homebrew](https://brew.sh/)
 ```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-- Install `nvm`
+- Install [nvm](https://github.com/creationix/nvm)
 ```sh
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 ```
-- Install `node`
+- Install `node` with `nvm`
 ```sh
 nvm install node
 
-### install LTS version and set as default
+### install LTS version and set as default (optional)
 nvm install --lts
 nvm alias default lts/*
+```
+- Install Yarn (exclude Node.js, prefer nvm)
+```sh
+brew install yarn --without-node
 ```
 - Setup dotfiles
 ```sh
@@ -35,6 +39,6 @@ cd dotfiles
 ```
 ----------
 ## Notes
-- Install Source Code Pro from fonts
+- Install Source Code Pro fonts
 - Link iTerm preferences to `~/dotfiles/iterm/com.googlecode.iterm2.plist`
-- Install starred Atom packages `apm stars --install`
+- Sync atom settings with [sync-settings](https://atom.io/packages/sync-settings) package
