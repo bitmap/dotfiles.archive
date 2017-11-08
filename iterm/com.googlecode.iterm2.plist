@@ -12,6 +12,8 @@
 	<integer>1</integer>
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
+	<key>CopySelection</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>theme</key>
@@ -289,6 +291,8 @@
 	<false/>
 	<key>EnableProxyIcon</key>
 	<false/>
+	<key>FlashTabBarInFullscreen</key>
+	<false/>
 	<key>HideActivityIndicator</key>
 	<true/>
 	<key>HideMenuBarInFullscreen</key>
@@ -298,7 +302,7 @@
 	<key>HideTab</key>
 	<true/>
 	<key>HideTabCloseButton</key>
-	<true/>
+	<false/>
 	<key>HideTabNumber</key>
 	<true/>
 	<key>Hotkey</key>
@@ -312,11 +316,11 @@
 	<key>HotkeyModifiers</key>
 	<integer>1048840</integer>
 	<key>JobName</key>
-	<true/>
+	<false/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Dev/dotfiles/iterm</string>
+	<string>~/dotfiles/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -334,7 +338,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdKAAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -355,14 +359,14 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>617 297 445 338 0 0 1680 1028 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 477 620 392 0 0 1680 1028 </string>
+	<string>410 364 620 392 0 0 1440 878 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>702 315 796 473 0 0 1680 1028 </string>
+	<string>736 492 796 473 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>191 124 1306 806 0 0 1680 1028 </string>
+	<string>322 95 812 783 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>450 325 570 452 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1045,9 +1049,9 @@
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
-			<true/>
+			<false/>
 			<key>Use Bright Bold</key>
-			<true/>
+			<false/>
 			<key>Use HFS Plus Mapping</key>
 			<false/>
 			<key>Use Italic Font</key>
@@ -1064,18 +1068,14 @@
 			<string>~/</string>
 		</dict>
 	</array>
-	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
-	<true/>
-	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
-	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>562E794B-7ED6-4D15-9C06-044D6DEA1F52</string>
+	<string>AA3B0DE4-D1F6-43B9-8A6F-AB321E827377</string>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>500868105.44080698</real>
+	<real>531069352.78851497</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -1083,7 +1083,7 @@
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
-	<false/>
+	<true/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1118,7 +1118,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/cabe/Dev/dotfiles/iterm</string>
+	<string>/Users/cbranson/dotfiles/iterm</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>SUEnableAutomaticChecks</key>
@@ -1126,25 +1126,27 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=71</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=21</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-10T00:40:11Z</date>
+	<date>2017-11-07T16:39:44Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>
-	<true/>
+	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.10000000000000001</real>
 	<key>StretchTabsToFillBar</key>
-	<false/>
+	<true/>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>TabViewType</key>
@@ -1158,7 +1160,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.1.3</string>
+	<string>3.1.5</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
