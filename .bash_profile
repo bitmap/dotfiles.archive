@@ -28,6 +28,9 @@ alias gd="git diff -w"
 alias gf="git fetch"
 alias gp="git pull"
 alias gg="git push"
+alias gbr="git branch"
+alias gco="git checkout"
+alias gnb="git checkout -b"
 
 # node aliases
 alias npmg="npm list -g --depth=0" # list globals
@@ -36,7 +39,7 @@ alias npmg="npm list -g --depth=0" # list globals
 alias zzz="pmset sleepnow"
 
 # restart
-alias restart="osascript -e 'tell app \"System Events\" to restart'"
+alias ugh="osascript -e 'tell app \"System Events\" to restart'"
 
 # update hosts
 alias update-hosts="cd ~/hosts/; git pull; python updateHostsFile.py"
@@ -54,9 +57,6 @@ alias lip="ipconfig getifaddr en0"
 
 # mkdir and cd function
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
-
-# shortcut to dev folder
-function dev () { cd ~/dev/"$@"; }
 
 # kill port
 function killport () { lsof -n -i4TCP:"$@" | grep LISTEN | tr -s " " | cut -f 2 -d " " | xargs kill -9; }
