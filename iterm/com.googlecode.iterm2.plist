@@ -359,14 +359,10 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 364 620 392 0 0 1440 878 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>736 492 796 473 0 0 2560 1418 </string>
+	<string>322 309 796 473 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>322 95 812 783 0 0 1440 878 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>450 325 570 452 0 0 1440 877 </string>
+	<string>155 438 812 783 0 0 2560 1418 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1071,11 +1067,9 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>AA3B0DE4-D1F6-43B9-8A6F-AB321E827377</string>
-	<key>NoSyncPermissionToShowTip</key>
-	<false/>
+	<string>263D0952-46E8-4438-84AF-3DE0191011EC</string>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>531069352.78851497</real>
+	<real>531861329.68149799</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -1118,7 +1112,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/cbranson/dotfiles/iterm</string>
+	<string>/Users/cabe/dotfiles/iterm</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>SUEnableAutomaticChecks</key>
@@ -1126,11 +1120,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=21</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=46</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-07T16:39:44Z</date>
+	<date>2017-11-16T21:17:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
