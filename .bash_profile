@@ -28,6 +28,7 @@ alias gd="git diff -w"
 alias gf="git fetch"
 alias gp="git pull"
 alias gg="git push"
+alias ggg="git push --set-upstream origin"
 alias gbr="git branch"
 alias gco="git checkout"
 alias gnb="git checkout -b"
@@ -165,7 +166,7 @@ PS1+="\n"; # newline
 PS1+="\[${green}\] $ \[${reset}\]"; # prompt
 export PS1;
 
-PS2="\[${yellow}\]$ \[${reset}\]";
+PS2="\[${yellow}\] $ \[${reset}\]";
 export PS2;
 
 eval "$(thefuck --alias)"
