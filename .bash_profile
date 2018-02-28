@@ -21,7 +21,6 @@ alias sudo="sudo "
 # git aliases
 alias g="git"
 alias gs="git status"
-alias gl="git log --pretty=format:'%h %s' --graph"
 alias ga="git add"
 alias gc="git commit -m" # requires you to type a commit message
 alias gd="git diff -w"
@@ -32,6 +31,7 @@ alias ggg="git push --set-upstream origin"
 alias gbr="git branch"
 alias gco="git checkout"
 alias gnb="git checkout -b"
+alias glog="git log --pretty=format:'%h %s' --graph"
 
 # node aliases
 alias npmg="npm list -g --depth=0" # list globals
@@ -55,6 +55,9 @@ alias path='echo -e ${PATH//:/\\n}'
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias lip="ipconfig getifaddr en0"
+
+# Own the files in this directory *DANGERZONE*
+alias gimme='chmod -R u+x .'
 
 # mkdir and cd function
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
@@ -97,7 +100,7 @@ prompt_git() {
 
       # Check for uncommitted changes in the index.
       if ! $(git diff --quiet --ignore-submodules --cached); then
-        s+="±";
+        s+="+";
       fi;
 
       # Check for unstaged changes.
@@ -107,12 +110,12 @@ prompt_git() {
 
       # Check for untracked files.
       if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-        s+="?";
+        s+="…";
       fi;
 
       # Check for stashed files.
       if $(git rev-parse --verify refs/stash &>/dev/null); then
-        s+="$";
+        s+="#";
       fi;
 
     fi;
@@ -158,15 +161,12 @@ else
 fi;
 
 # Set the terminal title and prompt.
-PS1=" \[\033]0;\W\007\]"; # working directory base name
-# PS1+="\n"; # newline
-PS1+="\[${blue}\]\w"; # working directory full path
+PS1="\n\[${cyan}\]\w"; # working directory full path
 PS1+="\$(prompt_git \"\[${reset}\] @ \[${yellow}\]\" \"\[${magenta}\]\")"; # Git repository details
-PS1+="\n"; # newline
-PS1+="\[${green}\] $ \[${reset}\]"; # prompt
+PS1+="\n\[${green}\]$ \[${reset}\]"; # prompt
 export PS1;
 
-PS2="\[${yellow}\] $ \[${reset}\]";
+PS2="\[${yellow}\]$ \[${reset}\]";
 export PS2;
 
 eval "$(thefuck --alias)"
