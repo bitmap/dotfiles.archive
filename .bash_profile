@@ -31,12 +31,13 @@ alias ggg="git push --set-upstream origin"
 alias gbr="git branch"
 alias gco="git checkout"
 alias gnb="git checkout -b"
-alias glog="git log --pretty=format:'%h %s' --graph"
+alias glg="git log --oneline --decorate --all --graph"
 
 # node aliases
 alias npmg="npm list -g --depth=0" # list globals
 
 # put computer to sleep
+alias zz="pmset displaysleepnow"
 alias zzz="pmset sleepnow"
 
 # restart
