@@ -1,17 +1,22 @@
-" colorscheme base16-default-dark
+" pretty
+syntax enable
+set background=dark
+colorscheme solarized
 
-" enter the current millenium
+" enter the current millennium
 set nocompatible
 
 " enable syntax and plugins
-syntax on
 filetype plugin on
+
+" load filetype-specific indent files
+filetype indent on
 
 " rad tab-completion
 set path+=**
 set wildmenu
 
-" INSERT tweaks 
+" INSERT tweaks
 set esckeys
 set backspace=indent,eol,start
 
@@ -29,6 +34,9 @@ set ruler
 set showmode
 set showcmd
 
+" highlight matching brackets
+set showmatch
+
 " show filename
 set title
 
@@ -37,5 +45,9 @@ set number
 set cursorline
 
 " make tabs as wide as two spaces
+set expandtab
 set tabstop=2
+set softtabstop=2
 
+" redraw only when we need to.
+set lazyredraw
