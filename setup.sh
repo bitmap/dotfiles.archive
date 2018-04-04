@@ -4,7 +4,7 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
 
-function doIt() {
+function sync_dotfiles() {
 	rsync --exclude ".git/" \
     --exclude "fonts/" \
     --exclude "iterm/" \
@@ -25,4 +25,4 @@ else
 		doIt;
 	fi;
 fi;
-unset doIt;
+unset sync_dotfiles;
