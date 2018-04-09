@@ -1,7 +1,6 @@
 " pretty
 syntax enable
-set background=dark
-colorscheme solarized
+colorscheme base16-materia
 
 " enter the current millennium
 set nocompatible
@@ -21,7 +20,7 @@ set esckeys
 set backspace=indent,eol,start
 
 " status line
-set laststatus=2
+" set laststatus=2
 
 " enable mouse
 set mouse=a
