@@ -26,3 +26,5 @@ else
 	fi;
 fi;
 unset sync_dotfiles;
+
+source ~/.bash_profile

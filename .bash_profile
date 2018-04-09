@@ -33,8 +33,18 @@ alias gco="git checkout"
 alias gnb="git checkout -b"
 alias glg="git log --oneline --decorate --all --graph"
 
-# node aliases
-alias npmg="npm list -g --depth=0" # list globals
+# npm aliases
+alias ni='npm install'
+alias nid='npm install --save-dev'
+alias nig='npm install --global'
+alias nt='npm test'
+alias nit='npm install && npm test'
+alias nk='npm link'
+alias nr='npm run'
+alias ns='npm start'
+alias nf='npm cache clean && rm -rf node_modules && npm install'
+alias nl='npm lits --depth=0'
+alias nlg='npm list --global --depth=0'
 
 # put computer to sleep
 alias zz="pmset displaysleepnow"
