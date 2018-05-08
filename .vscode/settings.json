@@ -1,0 +1,28 @@
+{
+    "editor.cursorBlinking": "phase",
+    "editor.cursorStyle": "line",
+    "editor.fontFamily": "Hack",
+    "editor.fontSize": 14,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.links": false,
+    "editor.matchBrackets": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderControlCharacters": true,
+    "editor.tabSize": 2,
+    "eslint.autoFixOnSave": true,
+    "explorer.confirmDragAndDrop": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true
+      },
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.tips.enabled": false,
+}

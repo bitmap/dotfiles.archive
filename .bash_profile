@@ -10,6 +10,7 @@ alias x="clear"
 
 # quick nav
 alias ~="cd ~"
+alias -="cd -"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
