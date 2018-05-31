@@ -33,9 +33,5 @@
     "workbench.activityBar.visible": true,
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
-<<<<<<< HEAD
     "atomKeymap.promptV3Features": true,
 }
-=======
-}
->>>>>>> ddca32806c39d877fde3963d69d265857840ec5f
