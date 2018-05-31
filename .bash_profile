@@ -2,7 +2,7 @@
 alias ls="command ls -G"
 alias l="ls -lF -G" # all files, in long format
 alias la="ls -laF -G" # all files inc dotfiles, in long format
-alias lsd='ls -lF -G | grep "^d"' # only directories
+alias lsd="ls -lF -G | grep '^d'" # only directories
 alias ll="ls -alS"
 
 # quick clear
@@ -10,7 +10,6 @@ alias x="clear"
 
 # quick nav
 alias ~="cd ~"
-alias -="cd -"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -21,31 +20,31 @@ alias sudo="sudo "
 
 # git aliases
 alias g="git"
-alias gs="git status"
 alias ga="git add"
+alias gb="git branch"
 alias gc="git commit -m" # requires you to type a commit message
+alias gco="git checkout"
 alias gd="git diff -w"
 alias gf="git fetch"
-alias gp="git pull"
 alias gg="git push"
 alias ggg="git push --set-upstream origin"
-alias gbr="git branch"
-alias gco="git checkout"
-alias gnb="git checkout -b"
 alias glg="git log --oneline --decorate --all --graph"
+alias gnb="git checkout -b"
+alias gp="git pull"
+alias gs="git status"
 
 # npm aliases
-alias ni='npm install'
-alias nid='npm install --save-dev'
-alias nig='npm install --global'
-alias nt='npm test'
-alias nit='npm install && npm test'
-alias nk='npm link'
-alias nr='npm run'
-alias ns='npm start'
-alias nf='npm cache clean && rm -rf node_modules && npm install'
-alias nl='npm lits --depth=0'
-alias nlg='npm list --global --depth=0'
+alias nf="npm cache clean && rm -rf node_modules && npm install"
+alias ni="npm install"
+alias nid="npm install --save-dev"
+alias nig="npm install --global"
+alias nit="npm install && npm test"
+alias nk="npm link"
+alias nl="npm lits --depth=0"
+alias nlg="npm list --global --depth=0"
+alias nr="npm run"
+alias ns="npm start"
+alias nt="npm test"
 
 # put computer to sleep
 alias zz="pmset displaysleepnow"
@@ -56,6 +55,10 @@ alias ugh="osascript -e 'tell app \"System Events\" to restart'"
 
 # update hosts
 alias update-hosts="cd ~/hosts/; git pull; python updateHostsFile.py"
+
+# upgrade node/npm to latest
+alias update-node="nvm install node --latest-npm --reinstall-packages-from=node"
+alias update-node-lts="nvm install --lts --latest-npm --reinstall-packages-from='lts/*'"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -69,7 +72,7 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias lip="ipconfig getifaddr en0"
 
 # Own the files in this directory *DANGERZONE*
-alias gimme='chmod -R u+x .'
+alias gimme="chmod -R u+x ."
 
 # mkdir and cd function
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
@@ -80,7 +83,7 @@ function killport () { lsof -n -i4TCP:"$@" | grep LISTEN | tr -s " " | cut -f 2 
 # clone from "github.com/bitmap"
 function bitmap () { git clone https://github.com/bitmap/"$@".git; }
 
-# PATH for npm [deprecated - use 'nvm' instead]
+# PATH for npm [deprecated - use nvm instead]
 # export PATH="$HOME/.npm-packages/bin:$PATH"
 
 # This loads nvm
@@ -98,7 +101,7 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
 fi;
 
 prompt_git() {
-  local s="";
+  local status="";
   local branchName="";
 
   # Check if the current directory is in a Git repository.
@@ -112,22 +115,22 @@ prompt_git() {
 
       # Check for uncommitted changes in the index.
       if ! $(git diff --quiet --ignore-submodules --cached); then
-        s+="+";
+        status+="+";
       fi;
 
       # Check for unstaged changes.
       if ! $(git diff-files --quiet --ignore-submodules --); then
-        s+="*";
+        status+="*";
       fi;
 
       # Check for untracked files.
       if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-        s+="…";
+        status+="…";
       fi;
 
       # Check for stashed files.
       if $(git rev-parse --verify refs/stash &>/dev/null); then
-        s+="#";
+        status+="#";
       fi;
 
     fi;
@@ -139,9 +142,9 @@ prompt_git() {
     git rev-parse --short HEAD 2> /dev/null || \
     echo '(unknown)')";
 
-    [ -n "${s}" ] && s=" [${s}]";
+    [ -n "${status}" ] && status=" [${status}]";
 
-    echo -e "${1}${branchName}${2}${s}";
+    echo -e "${1}${branchName}${2}${status}";
   else
     return;
   fi;
@@ -178,9 +181,10 @@ PS1+="\$(prompt_git \"\[${reset}\] @ \[${yellow}\]\" \"\[${magenta}\]\")"; # Git
 PS1+="\n\[${green}\]$ \[${reset}\]"; # prompt
 export PS1;
 
-PS2="\[${yellow}\]$ \[${reset}\]";
+PS2="\[${green}\]› \[${reset}\]";
 export PS2;
 
+# fuck
 eval "$(thefuck --alias)"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

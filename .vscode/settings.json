@@ -25,4 +25,5 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
     "workbench.tips.enabled": false,
+    "atomKeymap.promptV3Features": true,
 }
