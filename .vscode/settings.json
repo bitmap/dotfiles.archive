@@ -1,18 +1,24 @@
 {
     "editor.cursorBlinking": "phase",
     "editor.cursorStyle": "line",
-    "editor.fontFamily": "Hack",
+    "editor.fontFamily": "Hack, monospace",
     "editor.fontSize": 14,
     "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
+    "editor.insertSpaces": true,
     "editor.links": false,
     "editor.matchBrackets": true,
     "editor.minimap.renderCharacters": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.renderControlCharacters": true,
+    "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "boundary",
     "editor.tabSize": 2,
     "eslint.autoFixOnSave": true,
+    "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -20,10 +26,16 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/node_modules": true
-      },
-    "workbench.colorTheme": "One Dark Pro",
+    },
+    "workbench.colorTheme": "One Dark Pro Vivid",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
+<<<<<<< HEAD
     "atomKeymap.promptV3Features": true,
 }
+=======
+}
+>>>>>>> ddca32806c39d877fde3963d69d265857840ec5f
