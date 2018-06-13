@@ -12,7 +12,7 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.renderControlCharacters": true,
     "editor.renderLineHighlight": "all",
-    "editor.renderWhitespace": "boundary",
+    "editor.renderWhitespace": "none",
     "editor.tabSize": 2,
     "eslint.autoFixOnSave": true,
     "explorer.confirmDelete": false,
@@ -27,7 +27,7 @@
         "**/.DS_Store": true,
         "**/node_modules": true
     },
-    "workbench.colorTheme": "One Dark Pro Vivid",
+    "workbench.colorTheme": "Night Owl",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
     "workbench.activityBar.visible": true,

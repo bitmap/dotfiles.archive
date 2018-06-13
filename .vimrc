@@ -1,6 +1,6 @@
 " pretty
 syntax enable
-colorscheme base16-dracula
+colorscheme base16-default-dark
 
 " enter the current millennium
 set nocompatible
