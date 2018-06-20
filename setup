@@ -2,23 +2,20 @@
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-function link_dotfiles() {
+function dotfiles() {
 	dir=~/.dotfiles
-	files=".bash_profile .vimrc .vim .gitconfig .gitignore"
+	files=".bash_profile .vimrc .vim .gitconfig .gitignore .nvm/default-packages"
 
 	for file in $files; do
-		rm -r ~/$file
+		touch ~/$file # create if doesn't exist
+		rm -r ~/$file # remove old version
     echo "Creating symlink to $file..."
-    ln -s $dir/$file ~/$file
+    ln -s $dir/$file ~/$file # make new symlink
 	done
 
 	echo "Creating symlink to VS Code Settings..."
 	rm ~/Library/Application\ Support/Code/User/settings.json
 	ln -s $dir/.vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-
-	echo "Creating symlink to NVM default packages..."
-	rm ~/.nvm/default-packages
-	ln -s $dir/.nvm/default-packages ~/.nvm/default-packages
 
 	touch ~/.hushlogin
 	source ~/.bash_profile;
@@ -27,12 +24,12 @@ function link_dotfiles() {
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	link_dotfiles;
+	dotfiles;
 else
 	read -p "This will overwrite existing files. Are you sure? (y/n) " -n 1;
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		link_dotfiles;
+		dotfiles;
 	fi;
 fi;
-unset link_dotfiles;
+unset dotfiles;
