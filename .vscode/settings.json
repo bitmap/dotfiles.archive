@@ -1,4 +1,5 @@
 {
+    "atomKeymap.promptV3Features": true,
     "editor.cursorBlinking": "phase",
     "editor.cursorStyle": "line",
     "editor.fontFamily": "Hack, monospace",
@@ -17,8 +18,6 @@
     "eslint.autoFixOnSave": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -27,11 +26,15 @@
         "**/.DS_Store": true,
         "**/node_modules": true
     },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.activityBar.visible": true,
     "workbench.colorTheme": "Night Owl",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.activityBar.visible": true,
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
-    "atomKeymap.promptV3Features": true,
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false
 }
