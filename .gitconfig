@@ -37,5 +37,3 @@
   helper = osxkeychain
 [include]
   gitlab = .gitlab/.gitconfig
-[includeIf "gitdir:~/b-reel/"]
-  path = ~/b-reel/.gitconfig
