@@ -154,13 +154,13 @@ if tput setaf 1 &> /dev/null; then
   tput sgr0; # reset colors
   bold=$(tput bold);
   reset=$(tput sgr0);
-  black=$(tput setaf 0);
-  red=$(tput setaf 1);
-  green=$(tput setaf 2);
-  yellow=$(tput setaf 3);
-  blue=$(tput setaf 4);
-  magenta=$(tput setaf 5);
-  cyan=$(tput setaf 6);
+  black=$(tput setaf 8);
+  red=$(tput setaf 9);
+  green=$(tput setaf 10);
+  yellow=$(tput setaf 11);
+  blue=$(tput setaf 12);
+  magenta=$(tput setaf 13);
+  cyan=$(tput setaf 14);
   white=$(tput setaf 15);
 else
   bold="";
@@ -176,8 +176,8 @@ else
 fi;
 
 # Set the terminal title and prompt.
-PS1="\n\[${cyan}\]\w"; # working directory full path
-PS1+="\$(prompt_git \"\[${reset}\] @ \[${yellow}\]\" \"\[${magenta}\]\")"; # Git repository details
+PS1="\n\[${green}\]\w"; # working directory full path
+PS1+="\$(prompt_git \"\[${reset}\] @ \[${blue}\]\" \"\[${yellow}\]\")"; # Git repository details
 PS1+="\n\[${green}\]$ \[${reset}\]"; # prompt
 export PS1;
 
