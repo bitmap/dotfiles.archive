@@ -3,22 +3,39 @@
 cd "$(dirname "${BASH_SOURCE}")";
 
 function dotfiles() {
-	dir=~/.dotfiles
+	dotfiles=~/.dotfiles
 	files=".bashrc .bash_profile .vimrc .vim .gitconfig .gitignore .nvm/default-packages"
 
 	for file in $files; do
-		touch ~/$file # create if doesn't exist
-		rm -r ~/$file # remove old version
+		# create if doesn't exist
+		if [ -e "$file" ]; then
+			touch ~/$file
+		fi
+
+		# remove old version
+		rm -r ~/$file
+
+		# make new symlink
     echo "Creating symlink to $file..."
-    ln -s $dir/$file ~/$file # make new symlink
+    ln -s $dotfiles/$file ~/$file
 	done
 
-	echo "Creating symlink to VS Code Settings..."
-	rm ~/Library/Application\ Support/Code/User/settings.json
-	ln -s $dir/.vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	# symlink vscode if it's istalled
+	vscode_macos=~/"Library/Application Support/Code/User/settings.json"
+	vscode_linux=~/.config/Code/User/settings.json
+
+	echo "Creating symlink to VS Code settings..."
+	if [ -f "$vscode_macos" ]; then
+		rm "$vscode_macos"
+		ln -s $dotfiles/.vscode/settings.json "$vscode_macos"
+	elif [ -f "$vscode_linux" ]; then
+		rm "$vscode_linux"
+		ln -s $dotfiles/.vscode/settings.json "$vscode_linux"
+	else echo "Can't find VS Code settings"
+	fi
 
 	touch ~/.hushlogin
-	source ~/.bash_profile;
+	source ~/.bashrc;
 
 	echo "Done. Bye."
 }
