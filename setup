@@ -4,7 +4,7 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 function dotfiles() {
 	dotfiles=~/.dotfiles
-	files=".bashrc .bash_profile .vimrc .vim .gitconfig .gitignore .nvm/default-packages"
+	files=".bashrc .bash_profile .vimrc .vim .gitconfig .gitignore .inputrc .nvm/default-packages"
 
 	for file in $files; do
 		# create if doesn't exist
