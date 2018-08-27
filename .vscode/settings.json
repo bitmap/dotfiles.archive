@@ -36,5 +36,6 @@
     "workbench.tips.enabled": false,
     "css.validate": false,
     "less.validate": false,
-    "scss.validate": false
+    "scss.validate": false,
+    "javascript.updateImportsOnFileMove.enabled": "never"
 }
