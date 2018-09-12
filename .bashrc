@@ -33,7 +33,8 @@ alias gnb="git checkout -b"
 alias gp="git pull"
 alias gs="git status"
 
-# npm aliases
+# node / npm aliases
+alias n="node"
 alias nf="npm cache clean && rm -rf node_modules && npm install"
 alias ni="npm install"
 alias nid="npm install --save-dev"
@@ -45,6 +46,11 @@ alias nlg="npm list --global --depth=0"
 alias nr="npm run"
 alias ns="npm start"
 alias nt="npm test"
+
+# python aliases
+alias p="python3"
+alias python="python3"
+alias python2="python"
 
 # put computer to sleep
 alias zz="pmset displaysleepnow"
@@ -154,25 +160,14 @@ if tput setaf 1 &> /dev/null; then
   tput sgr0; # reset colors
   bold=$(tput bold);
   reset=$(tput sgr0);
-  black=$(tput setaf 8);
-  red=$(tput setaf 9);
-  green=$(tput setaf 10);
-  yellow=$(tput setaf 11);
-  blue=$(tput setaf 12);
-  magenta=$(tput setaf 13);
-  cyan=$(tput setaf 14);
-  white=$(tput setaf 15);
-else
-  bold="";
-  reset="\e[0m";
-  black="\e[1;30m";
-  red="\e[1;31m";
-  green="\e[1;32m";
-  yellow="\e[1;33m";
-  blue="\e[1;34m";
-  magenta="\e[1;35m";
-  cyan="\e[1;36m";
-  white="\e[1;37m";
+  black=$(tput setaf 0);
+  red=$(tput setaf 1);
+  green=$(tput setaf 2);
+  yellow=$(tput setaf 3);
+  blue=$(tput setaf 4);
+  magenta=$(tput setaf 5);
+  cyan=$(tput setaf 6);
+  white=$(tput setaf 7);
 fi;
 
 # Set the terminal title and prompt.
