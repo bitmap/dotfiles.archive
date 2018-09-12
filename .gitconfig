@@ -9,7 +9,8 @@
   ls = ls-files
   df = diff
   rs = reset
-  fucked = reset HEAD --hard
+  undo = reset --soft HEAD~
+  fucked = reset --hard HEAD~
 [core]
   excludesfile = ~/.gitignore
 [color]
