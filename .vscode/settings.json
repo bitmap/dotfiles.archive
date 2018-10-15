@@ -29,13 +29,14 @@
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "workbench.activityBar.visible": false,
-    "workbench.sideBar.location": "left",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.statusBar.feedback.visible": false,
-    "workbench.statusBar.visible": false,
     "workbench.tips.enabled": false,
     "css.validate": false,
     "less.validate": false,
     "scss.validate": false,
-    "javascript.updateImportsOnFileMove.enabled": "never"
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.statusBar.visible": false,
+    "workbench.editor.labelFormat": "short",
+    "workbench.editor.tabSizing": "shrink"
 }

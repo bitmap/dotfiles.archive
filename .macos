@@ -150,6 +150,9 @@ defaults write com.apple.dock mineffect -string "scale"
 # Minimize windows into the dock
 defaults write com.apple.dock minimize-to-application -bool false
 
+# Don’t show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
+
 # Enable spring loading for all Dock items
 defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 

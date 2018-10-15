@@ -9,8 +9,9 @@
   ls = ls-files
   df = diff
   rs = reset
-  undo = reset --soft HEAD~
-  fucked = reset --hard HEAD~
+  undo = reset --soft HEAD^
+  redo = git commit -a -c ORIG_HEAD
+  fucked = reset --hard HEAD
 [core]
   excludesfile = ~/.gitignore
 [color]

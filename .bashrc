@@ -1,9 +1,8 @@
-# color ls
+# better ls
 alias ls="command ls -G"
-alias l="ls -lF -G" # all files, in long format
-alias la="ls -laF -G" # all files inc dotfiles, in long format
-alias lsd="ls -lF -G | grep '^d'" # only directories
-alias ll="ls -alS"
+alias ll="ls -lFG" # in long format
+alias la="ls -alFG" # all files, in long format
+alias ld="ls -lFG | grep '^d'" # only directories
 
 # quick clear
 alias x="clear"
@@ -31,6 +30,7 @@ alias ggg="git push --set-upstream origin"
 alias glg="git log --oneline --decorate --all --graph"
 alias gnb="git checkout -b"
 alias gp="git pull"
+alias gr="git reset HEAD --"
 alias gs="git status"
 
 # node / npm aliases
