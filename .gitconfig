@@ -6,11 +6,15 @@
   ci = commit
   br = branch
   co = checkout
+  nb = checkout -b
   ls = ls-files
   df = diff
   rs = reset
+  got = pull --rebase origin master
+  redo = commit -a -c ORIG_HEAD
+  amend = commit --amend
+  oops = commit --amend --no-edit
   undo = reset --soft HEAD^
-  redo = git commit -a -c ORIG_HEAD
   fucked = reset --hard HEAD
 [core]
   excludesfile = ~/.gitignore
@@ -21,13 +25,13 @@
   local = yellow
   remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+  meta = yellow
+  frag = magenta
+  old = red
+  new = green
 [color "status"]
-  added = yellow
-  changed = green
+  added = green
+  changed = yellow
   untracked = cyan
 [push]
   default = simple

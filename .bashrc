@@ -1,8 +1,8 @@
 # better ls
-alias ls="command ls -G"
-alias ll="ls -lFG" # in long format
-alias la="ls -alFG" # all files, in long format
-alias ld="ls -lFG | grep '^d'" # only directories
+alias ls="command ls -FG1"
+alias la="ls -A" # all files
+alias ll="ls -ho" # in long format
+alias lla="ll -A" # in long format
 
 # quick clear
 alias x="clear"
