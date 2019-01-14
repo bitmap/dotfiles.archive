@@ -5,3 +5,4 @@ rimraf
 serve
 localtunnel
 gitlab-cmd
+diff-so-fancy
