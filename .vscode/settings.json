@@ -38,5 +38,9 @@
     "workbench.statusBar.feedback.visible": false,
     "workbench.statusBar.visible": false,
     "workbench.editor.labelFormat": "short",
-    "workbench.editor.tabSizing": "shrink"
+    "workbench.editor.tabSizing": "shrink",
+    "window.zoomLevel": 0,
+    "javascript.suggest.autoImports": false,
+    "javascript.format.enable": false,
+    "typescript.format.enable": false,
 }
