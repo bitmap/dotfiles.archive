@@ -25,6 +25,7 @@ alias copy="cp -iv"
 alias move="mv -iv"
 alias link="ln -iv"
 alias remove="rm -Ivr"
+alias rimraf="rm -rf"
 
 # git aliases
 alias g="git"
