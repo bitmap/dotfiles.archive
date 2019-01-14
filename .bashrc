@@ -1,3 +1,6 @@
+# quick source
+alias src="source ~/.bashrc"
+
 # better ls
 alias ls="command ls -FG1"
 alias la="ls -A" # all files
@@ -17,35 +20,49 @@ alias .....="cd ../../../.."
 # sudo alias
 alias sudo="sudo "
 
+# interactive/verbose tasks
+alias copy="cp -iv"
+alias move="mv -iv"
+alias link="ln -iv"
+alias remove="rm -Ivr"
+
 # git aliases
 alias g="git"
 alias ga="git add"
 alias gb="git branch"
+alias gbd="git branch -d"
 alias gc="git commit"
 alias gco="git checkout"
-alias gd="git diff -w"
+alias gcom="git checkout master"
+alias gd="git diff"
 alias gf="git fetch"
 alias gg="git push"
-alias ggg="git push --set-upstream origin"
-alias glg="git log --oneline --decorate --all --graph"
-alias gnb="git checkout -b"
+alias GG="git push --set-upstream origin"
+alias gm="git merc"
+alias gM="git merge"
+alias gn="git checkout -b"
 alias gp="git pull"
+alias gpm="git pull master"
 alias gr="git reset HEAD --"
+alias grog="git grog"
 alias gs="git status"
+alias gss="git shorty"
 
 # node / npm aliases
 alias n="node"
 alias nf="npm cache clean && rm -rf node_modules && npm install"
 alias ni="npm install"
-alias nid="npm install --save-dev"
-alias nig="npm install --global"
-alias nit="npm install && npm test"
+alias nd="npm install --save-dev"
+alias ng="npm install --global"
+alias nt="npm install && npm test"
 alias nk="npm link"
 alias nl="npm lits --depth=0"
 alias nlg="npm list --global --depth=0"
 alias nr="npm run"
-alias ns="npm start"
-alias nt="npm test"
+alias ns="npm run start"
+alias nt="npm run test"
+alias nw="npm run watch"
+alias nb="npm run build"
 
 # python aliases
 alias p="python3"
@@ -80,24 +97,23 @@ alias lip="ipconfig getifaddr en0"
 # Own the files in this directory *DANGERZONE*
 alias gimme="chmod -R u+x ."
 
+# Weather
+alias weather='curl wttr.in/nyc'
+
+# shit
+alias shit='sudo !!'
+
+# fuck
+eval "$(thefuck --alias)"
+
 # mkdir and cd function
-function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+function mk () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 # kill port
 function killport () { lsof -n -i4TCP:"$@" | grep LISTEN | tr -s " " | cut -f 2 -d " " | xargs kill -9; }
 
-# clone from "github.com/bitmap"
+# clone repo from "github.com/bitmap"
 function bitmap () { git clone https://github.com/bitmap/"$@".git; }
-
-# PATH for npm [deprecated - use nvm instead]
-# export PATH="$HOME/.npm-packages/bin:$PATH"
-
-# This loads nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-# This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Prompt
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
@@ -143,7 +159,7 @@ prompt_git() {
 
     # Get the short symbolic ref.
     # If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
-    # Otherwise, just give up.
+    # Otherwise, just give up on life, you bum.
     branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
     git rev-parse --short HEAD 2> /dev/null || \
     echo '(unknown)')";
@@ -179,5 +195,9 @@ export PS1;
 PS2="\[${green}\]› \[${reset}\]";
 export PS2;
 
-# fuck
-eval "$(thefuck --alias)"
+# This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
