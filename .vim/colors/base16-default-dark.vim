@@ -121,6 +121,25 @@ if has("nvim")
     let g:terminal_color_background = g:terminal_color_7
     let g:terminal_color_foreground = g:terminal_color_2
   endif
+elseif has('terminal')
+  let g:terminal_ansi_colors = [
+        \ "#181818",
+        \ "#ab4642",
+        \ "#a1b56c",
+        \ "#f7ca88",
+        \ "#7cafc2",
+        \ "#ba8baf",
+        \ "#86c1b9",
+        \ "#d8d8d8",
+        \ "#585858",
+        \ "#ab4642",
+        \ "#a1b56c",
+        \ "#f7ca88",
+        \ "#7cafc2",
+        \ "#ba8baf",
+        \ "#86c1b9",
+        \ "#f8f8f8",
+        \ ]
 endif
 
 " Theme setup
@@ -129,7 +148,11 @@ syntax reset
 let g:colors_name = "base16-default-dark"
 
 " Highlighting function
-function! g:Base16hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
+" Optional variables are attributes and guisp
+function! g:Base16hi(group, guifg, guibg, ctermfg, ctermbg, ...)
+	let a:attr = get(a:, 1, "")
+	let a:guisp = get(a:, 2, "")
+
   if a:guifg != ""
     exec "hi " . a:group . " guifg=#" . a:guifg
   endif
@@ -172,8 +195,8 @@ call <sid>hi("MatchParen",    "", s:gui03, "", s:cterm03,  "", "")
 call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "", "")
 call <sid>hi("Question",      s:gui0D, "", s:cterm0D, "", "", "")
-call <sid>hi("Search",        s:gui03, s:gui0A, s:cterm03, s:cterm0A,  "", "")
-call <sid>hi("Substitute",    s:gui03, s:gui0A, s:cterm03, s:cterm0A, "none", "")
+call <sid>hi("Search",        s:gui01, s:gui0A, s:cterm01, s:cterm0A,  "", "")
+call <sid>hi("Substitute",    s:gui01, s:gui0A, s:cterm01, s:cterm0A, "none", "")
 call <sid>hi("SpecialKey",    s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("TooLong",       s:gui08, "", s:cterm08, "", "", "")
 call <sid>hi("Underlined",    s:gui08, "", s:cterm08, "", "", "")
@@ -333,6 +356,7 @@ call <sid>hi("NERDTreeExecFile",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("phpMemberSelector",  s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("phpComparison",      s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("phpParent",          s:gui05, "", s:cterm05, "", "", "")
+call <sid>hi("phpMethodsVar",      s:gui0C, "", s:cterm0C, "", "", "")
 
 " Python highlighting
 call <sid>hi("pythonOperator",  s:gui0E, "", s:cterm0E, "", "", "")
@@ -361,10 +385,10 @@ call <sid>hi("SignifySignChange",  s:gui0D, s:gui01, s:cterm0D, s:cterm01, "", "
 call <sid>hi("SignifySignDelete",  s:gui08, s:gui01, s:cterm08, s:cterm01, "", "")
 
 " Spelling highlighting
-call <sid>hi("SpellBad",     s:gui05, s:gui00, s:cterm05, s:cterm00, "undercurl", s:gui08)
-call <sid>hi("SpellLocal",   s:gui05, s:gui00, s:cterm05, s:cterm00, "undercurl", s:gui0C)
-call <sid>hi("SpellCap",     s:gui05, s:gui00, s:cterm05, s:cterm00, "undercurl", s:gui0D)
-call <sid>hi("SpellRare",    s:gui05, s:gui00, s:cterm05, s:cterm00, "undercurl", s:gui0E)
+call <sid>hi("SpellBad",     "", "", "", "", "undercurl", s:gui08)
+call <sid>hi("SpellLocal",   "", "", "", "", "undercurl", s:gui0C)
+call <sid>hi("SpellCap",     "", "", "", "", "undercurl", s:gui0D)
+call <sid>hi("SpellRare",    "", "", "", "", "undercurl", s:gui0E)
 
 " Startify highlighting
 call <sid>hi("StartifyBracket",  s:gui03, "", s:cterm03, "", "", "")
@@ -377,6 +401,9 @@ call <sid>hi("StartifySection",  s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("StartifySelect",   s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("StartifySlash",    s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("StartifySpecial",  s:gui03, "", s:cterm03, "", "", "")
+
+" Java highlighting
+call <sid>hi("javaOperator",     s:gui0D, "", s:cterm0D, "", "", "")
 
 " Remove functions
 delf <sid>hi

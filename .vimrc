@@ -51,3 +51,8 @@ set softtabstop=2
 
 " redraw only when we need to.
 set lazyredraw
+
+" cursor shape
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"

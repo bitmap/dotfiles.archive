@@ -1,6 +1,6 @@
 [user]
   name = Cabe Branson
-  email = cabebranson@gmail.com
+	email = 1258606+bitmap@users.noreply.github.com
 [alias]
 	it = !git init && git commit -m “root” --allow-empty
   got = pull --rebase origin master

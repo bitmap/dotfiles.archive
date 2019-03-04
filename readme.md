@@ -13,20 +13,12 @@ These are my preferences.
 ```
 - Install [nvm](https://github.com/creationix/nvm)
 ```sh
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 ```
 - Install `node` with `nvm`
 ```sh
 nvm install node
 nvm alias default node
-
-### OPTIONAL - install LTS version and set as default
-nvm install --lts
-nvm alias default lts/*
-```
-- Install Yarn (exclude Node.js, prefer nvm)
-```sh
-brew install yarn --without-node
 ```
 - Setup dotfiles
 ```sh
