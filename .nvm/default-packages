@@ -1,7 +1,8 @@
 create-react-app
 create-react-native-app
-now
-rimraf
-serve
-localtunnel
+diff-so-fancy
 gitlab-cmd
+install-local
+localtunnel
+now
+serve
