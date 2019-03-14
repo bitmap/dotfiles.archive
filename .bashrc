@@ -57,7 +57,7 @@ alias nd="npm install --save-dev"
 alias ng="npm install --global"
 alias nt="npm install && npm test"
 alias nk="npm link"
-alias nl="npm lits --depth=0"
+alias nls="npm list --depth=0"
 alias nlg="npm list --global --depth=0"
 alias nr="npm run"
 alias ns="npm run start"
@@ -95,9 +95,6 @@ alias path='echo -e ${PATH//:/\\n}'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias lip="ipconfig getifaddr en0"
 
-# Own the files in this directory *DANGERZONE*
-alias gimme="chmod -R u+x ."
-
 # Weather
 alias weather='curl wttr.in/nyc'
 
@@ -123,8 +120,27 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
   export TERM="xterm-256color";
 fi;
 
+if tput setaf 1 &> /dev/null; then
+  tput sgr0; # reset colors
+  reset=$(tput sgr0);
+  bold=$(tput bold);
+  black=$(tput setaf 0);
+  red=$(tput setaf 1);
+  green=$(tput setaf 2);
+  yellow=$(tput setaf 3);
+  blue=$(tput setaf 4);
+  magenta=$(tput setaf 5);
+  cyan=$(tput setaf 6);
+  white=$(tput setaf 7);
+  grey=$(tput setaf 8);
+  orange=$(tput setaf 9);
+  dark=$(tput setaf 10);
+  reverse=$(tput rev);
+fi;
+
 prompt_git() {
   local status="";
+  local stash="";
   local branchName="";
 
   # Check if the current directory is in a Git repository.
@@ -138,24 +154,25 @@ prompt_git() {
 
       # Check for uncommitted changes in the index.
       if ! $(git diff --quiet --ignore-submodules --cached); then
-        status+="+";
+        status+="${green}±$(git diff --cached --numstat | wc -l | sed 's/^ *//')";
       fi;
 
       # Check for unstaged changes.
-      if ! $(git diff-files --quiet --ignore-submodules --); then
-        status+="*";
+      if ! $(git diff-files --quiet --ignore-submodules --shortstat --); then
+        status+="${yellow}•$(git diff-files --ignore-submodules --shortstat | sed -E 's/.* ([0-9]+) file.*/\1/')";
+        # status+="${green}+$(git diff-files --ignore-submodules --shortstat | sed -E 's/.* ([0-9]+) insertion.*/\1/')";
+        # status+="${red}-$(git diff-files --ignore-submodules --shortstat | sed -E 's/.* ([0-9]+) deletion.*/\1/')";
       fi;
 
       # Check for untracked files.
       if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-        status+="…";
+        status+="${cyan}…$(git ls-files --others --exclude-standard | wc -l | sed 's/^ *//')";
       fi;
 
       # Check for stashed files.
       if $(git rev-parse --verify refs/stash &>/dev/null); then
-        status+="#";
+        stash+="${magenta} ⚑$(git stash list | wc -l | sed 's/^ *//')${reset}";
       fi;
-
     fi;
 
     # Get the short symbolic ref.
@@ -165,35 +182,21 @@ prompt_git() {
     git rev-parse --short HEAD 2> /dev/null || \
     echo '(unknown)')";
 
-    [ -n "${status}" ] && status=" [${status}]";
+    [ -n "${status}" ] && status=" ${grey}[${reset}${status}${grey}]${reset}";
 
-    echo -e "${1}${branchName}${2}${status}";
+    echo -e "${1}${branchName}${2}${status}${stash}";
   else
     return;
   fi;
 }
 
-if tput setaf 1 &> /dev/null; then
-  tput sgr0; # reset colors
-  bold=$(tput bold);
-  reset=$(tput sgr0);
-  black=$(tput setaf 0);
-  red=$(tput setaf 1);
-  green=$(tput setaf 2);
-  yellow=$(tput setaf 3);
-  blue=$(tput setaf 4);
-  magenta=$(tput setaf 5);
-  cyan=$(tput setaf 6);
-  white=$(tput setaf 7);
-fi;
-
 # Set the terminal title and prompt.
-PS1="\n\[${green}\]\w"; # working directory full path
-PS1+="\$(prompt_git \"\[${reset}\] @ \[${blue}\]\" \"\[${yellow}\]\")"; # Git repository details
-PS1+="\n\[${green}\]$ \[${reset}\]"; # prompt
+PS1="\n\[${reset}${grey}\]┌ \[${reset}${green}\]\w"; # working directory full path
+PS1+="\$(prompt_git \"\[${reset}\]  \[${blue}\]\" \"\[${grey}\]\") "; # Git repository details
+PS1+="\n\[${reset}${grey}\]└ \[${reset}\]"; # prompt
 export PS1;
 
-PS2="\[${green}\]› \[${reset}\]";
+PS2="\[${reset}${grey}\]> \[${reset}\]"; # prompt
 export PS2;
 
 # This loads nvm
