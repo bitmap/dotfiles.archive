@@ -5,6 +5,7 @@ These are my preferences.
 ## Setup
 
 - Install Xcode + command-line tools (this also installs `git`)
+- Install [Fire Code](https://github.com/tonsky/FiraCode) fonts
 - Install [iTerm](https://www.iterm2.com/downloads.html)
 - Install [VS Code](https://code.visualstudio.com/download)
 - Install [Homebrew](https://brew.sh/)
@@ -33,5 +34,4 @@ cd .dotfiles
 ----------
 ## Notes
 
-- Install Hack fonts
 - Link iTerm prefs to `~/.dotfiles/iterm/com.googlecode.iterm2.plist`
