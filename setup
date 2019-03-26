@@ -1,41 +1,46 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "${BASH_SOURCE}")";
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+FILES=".bashrc .bash_profile .vimrc .vim .gitconfig .gitignore .inputrc .nvm/default-packages"
 
-function dotfiles() {
-	dotfiles=~/.dotfiles
-	files=".bashrc .bash_profile .vimrc .vim .gitconfig .gitignore .inputrc .nvm/default-packages"
+vscode() {
+	echo "Creating symlink to ${1}/snippets..."
+	rm -rf "${1}/snippets"
+	ln -s "${DIR}/.vscode/snippets/" "${1}/snippets"
 
-	for file in $files; do
+	echo "Creating symlink to ${1}/settings.json..."
+	rm "${1}/settings.json"
+	ln -s "${DIR}/.vscode/settings.json" "${1}/settings.json"
+}
+
+dotfiles() {
+	for FILE in $FILES; do
 		# create if doesn't exist
-		if [ -e "$file" ]; then
-			touch ~/$file
+		if [ -e "$FILE" ]; then
+			touch $HOME/$FILE
 		fi
 
 		# remove old version
-		rm -r ~/$file
+		rm -r $HOME/$FILE
 
 		# make new symlink
-    echo "Creating symlink to $file..."
-    ln -s $dotfiles/$file ~/$file
+    echo "Creating symlink to $HOME/$FILE..."
+    ln -s $DIR/$FILE $HOME/$FILE
 	done
 
 	# symlink vscode if it's istalled
-	vscode_macos=~/"Library/Application Support/Code/User/settings.json"
-	vscode_linux=~/.config/Code/User/settings.json
+	local MACOS=$HOME/"Library/Application Support/Code/User"
+	local LINUX=$HOME/.config/Code/User
 
-	echo "Creating symlink to VS Code settings..."
-	if [ -f "$vscode_macos" ]; then
-		rm "$vscode_macos"
-		ln -s $dotfiles/.vscode/settings.json "$vscode_macos"
-	elif [ -f "$vscode_linux" ]; then
-		rm "$vscode_linux"
-		ln -s $dotfiles/.vscode/settings.json "$vscode_linux"
+	if [ -d "$MACOS" ]; then
+		vscode "$MACOS"
+	elif [ -f "$LINUX" ]; then
+		vscode "$LINUX"
 	else echo "Can't find VS Code settings"
 	fi
 
-	touch ~/.hushlogin
-	source ~/.bashrc;
+	touch $HOME/.hushlogin
+	source $HOME/.bashrc;
 
 	echo "Done. Bye."
 }
@@ -49,4 +54,6 @@ else
 		dotfiles;
 	fi;
 fi;
-unset dotfiles;
+
+unset DIR;
+unset FILES;

@@ -43,9 +43,8 @@
     "workbench.editor.labelFormat": "short",
     "workbench.editor.tabSizing": "shrink",
     "workbench.fontAliasing": "auto",
-    "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.statusBar.visible": true,
-    "workbench.tips.enabled": false,
+    "workbench.statusBar.visible": false,
+    "workbench.tips.enabled": false
 }
