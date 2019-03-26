@@ -191,7 +191,7 @@ prompt_git() {
 }
 
 # Set the terminal title and prompt.
-PS1="\n\[${reset}${grey}\]┌ \u::\h  \[${reset}${green}\]\w"; # working directory full path
+PS1="\n\[${reset}${grey}\]┌ \[${reset}${green}\]\w"; # working directory full path
 PS1+="\$(prompt_git \"\[${reset}\]  \[${blue}\]\" \"\[${grey}\]\") "; # Git repository details
 PS1+="\n\[${reset}${grey}\]└ \[${reset}\]"; # prompt
 export PS1;
