@@ -10,9 +10,9 @@
   commend = commit --amend --no-edit
   undo = reset --soft HEAD^
   fucked = reset --hard HEAD
+  off = git checkout --
   stsh = stash --keep-index
-  staash = stash --include-untracked
-  staaash = stash --all
+  hoard = stash --include-untracked
   pop = stash pop
   drop = stash drop
   shorty = status --short --branch
