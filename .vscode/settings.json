@@ -1,6 +1,5 @@
 {
     "atomKeymap.promptV3Features": true,
-    "breadcrumbs.enabled": true,
     "editor.cursorBlinking": "phase",
     "editor.cursorStyle": "line",
     "editor.fontFamily": "FiraCode-Retina",
@@ -12,6 +11,7 @@
     "editor.insertSpaces": true,
     "editor.links": false,
     "editor.matchBrackets": true,
+    "editor.minimap.enabled": false,
     "editor.minimap.renderCharacters": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.renderControlCharacters": true,
@@ -33,19 +33,16 @@
     "terminal.integrated.macOptionIsMeta": true,
     "typescript.format.enable": false,
     "window.zoomLevel": 0,
-    "workbench.activityBar.visible": true,
-    "workbench.colorCustomizations": {
-        "statusBar.background" : "#2D2D2D",
-        "statusBar.noFolderBackground" : "#212121",
-        "statusBar.debuggingBackground": "#263238"
-    },
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Dracula",
     "workbench.editor.enablePreview": false,
     "workbench.editor.labelFormat": "short",
-    "workbench.editor.tabSizing": "shrink",
+    "workbench.editor.tabSizing": "fit",
     "workbench.fontAliasing": "auto",
-    "workbench.startupEditor": "newUntitledFile",
+    "workbench.startupEditor": "none",
     "workbench.statusBar.feedback.visible": false,
     "workbench.statusBar.visible": false,
     "workbench.tips.enabled": false,
-    "workbench.colorTheme": "Dracula"
+    "explorer.openEditors.visible": 0,
+    "explorer.outline.visible": 0
 }

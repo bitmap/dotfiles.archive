@@ -322,7 +322,7 @@
 	<key>HotkeyModifiers</key>
 	<integer>1048840</integer>
 	<key>JobName</key>
-	<true/>
+	<false/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>MojaveVisualEffectView</key>
@@ -378,11 +378,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 477 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>245 363 770 429 0 0 1680 1027 </string>
+	<string>245 397 918 452 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>231 100 1218 826 0 0 1680 1027 </string>
+	<string>231 100 1218 826 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>290 77 1218 826 0 0 1680 1027 </string>
+	<string>290 95 1218 804 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>306 76 1350 869 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -1208,7 +1208,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-03-20T03:41:19Z</date>
+	<date>2019-04-04T13:09:37Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2110,7 +2110,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.7</string>
+	<string>3.2.8</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
