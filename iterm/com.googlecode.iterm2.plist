@@ -322,7 +322,7 @@
 	<key>HotkeyModifiers</key>
 	<integer>1048840</integer>
 	<key>JobName</key>
-	<false/>
+	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>MojaveVisualEffectView</key>
@@ -378,9 +378,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 477 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>245 397 918 452 0 0 1680 1050 </string>
+	<string>512 349 796 486 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>231 100 1218 826 0 0 1680 1050 </string>
+	<string>227 97 1227 832 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>290 95 1218 804 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -860,9 +860,16 @@
 				<key>0xf702-0x280000</key>
 				<dict>
 					<key>Action</key>
-					<integer>11</integer>
+					<integer>47</integer>
 					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
+					<string>0</string>
+				</dict>
+				<key>0xf702-0x2a0000</key>
+				<dict>
+					<key>Action</key>
+					<integer>47</integer>
+					<key>Text</key>
+					<string>1</string>
 				</dict>
 				<key>0xf703-0x220000</key>
 				<dict>
@@ -888,9 +895,16 @@
 				<key>0xf703-0x280000</key>
 				<dict>
 					<key>Action</key>
-					<integer>11</integer>
+					<integer>46</integer>
 					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
+					<string>0</string>
+				</dict>
+				<key>0xf703-0x2a0000</key>
+				<dict>
+					<key>Action</key>
+					<integer>46</integer>
+					<key>Text</key>
+					<string>1</string>
 				</dict>
 				<key>0xf704-0x20000</key>
 				<dict>
@@ -1208,7 +1222,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-04-04T13:09:37Z</date>
+	<date>2019-04-12T21:14:37Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2030,10 +2044,8 @@
 										<true/>
 										<key>Program</key>
 										<dict>
-											<key>Command</key>
-											<string>login -fqp "cabe"</string>
 											<key>Type</key>
-											<string>Command</string>
+											<string>Shell Launcher</string>
 										</dict>
 										<key>Rows</key>
 										<integer>43</integer>
@@ -2090,6 +2102,18 @@
 				</array>
 				<key>TerminalGuid</key>
 				<string>pty-7D2CDE39-7F14-45BB-9E9F-5AF922A9D34A</string>
+				<key>Toolbelt Proportions</key>
+				<dict>
+					<key>proportions</key>
+					<array>
+						<dict>
+							<key>heightAsFraction</key>
+							<real>1</real>
+							<key>name</key>
+							<string>Profiles</string>
+						</dict>
+					</array>
+				</dict>
 				<key>Use Transparency</key>
 				<true/>
 				<key>Width</key>
@@ -2097,9 +2121,9 @@
 				<key>Window Type</key>
 				<integer>0</integer>
 				<key>X Origin</key>
-				<real>351</real>
+				<real>231</real>
 				<key>Y Origin</key>
-				<real>175</real>
+				<real>100</real>
 			</dict>
 		</array>
 	</dict>
