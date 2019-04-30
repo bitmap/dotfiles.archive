@@ -6,3 +6,4 @@ install-local
 localtunnel
 now
 serve
+typescript

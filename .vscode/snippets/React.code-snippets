@@ -1,0 +1,62 @@
+{
+	"import react": {
+		"prefix": "imr",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"import React from 'react'"
+		],
+		"description": "import react"
+	},
+	"import prop-types": {
+		"prefix": "imp",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"import PropTypes from 'prop-types'"
+		],
+		"description": "import react"
+	},
+	"import styled-components": {
+		"prefix": "ims",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"import styled from 'styled-components'"
+		],
+		"description": "import styled-components"
+	},
+	"useEffect": {
+		"prefix": "ue",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"useEffect(() => {",
+			"  ${1}",
+			"}, [])"
+		],
+		"description": "useEffect"
+	},
+	"useLayoutEffect": {
+		"prefix": "ule",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"useLayoutEffect(() => {",
+			"  ${1}",
+			"}, [])"
+		],
+		"description": "useLayoutEffect"
+	},
+	"useRef": {
+		"prefix": "ur",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"const ${1} = useRef(${2})"
+		],
+		"description": "useRef"
+	},
+	"useState": {
+		"prefix": "us",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"const [${1:state}, ${2:setState}] = useState(${3:null})"
+		],
+		"description": "useState"
+	}
+}
