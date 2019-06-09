@@ -1,37 +1,44 @@
 # .dotfiles
-These are my preferences.
 
-----------
 ## Setup
 
-- Install Xcode + command-line tools (this also installs `git`)
-- Install [Fire Code](https://github.com/tonsky/FiraCode) fonts
-- Install [iTerm](https://www.iterm2.com/downloads.html)
-- Install [VS Code](https://code.visualstudio.com/download)
-- Install [Homebrew](https://brew.sh/)
+Prerequisites:
+- [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
+- [iTerm](https://iterm2.com/downloads.html)
+- [Visual Studio Code](https://code.visualstudio.com/download)
+
+Run scripts:
 ```sh
+# change shell to zsh
+chsh -s $(which zsh)
+
+# install Xcode command-line tools
+xcode-select --install
+
+# install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-- Install [nvm](https://github.com/creationix/nvm)
-```sh
+
+# install python
+brew install python
+sudo easy_install pip
+
+# install misc tools
+brew install ffmpeg diff-so-fancy thefuck
+brew install yarn --ignore-dependencies
+
+# install nvm and node
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-```
-- Install `node` with `nvm`
-```sh
 nvm install node
 nvm alias default node
-```
-- Setup dotfiles
-```sh
-git clone https://github.com/bitmap/dotfiles .dotfiles
-cd .dotfiles
+
+# symlink dotfiles
+git clone git@github.com:bitmap/.dotfiles.git && cd .dotfiles
 ./setup
+
+# setup macOS preferences
+./macos
 ```
-- Setup macOS
-```sh
-./.macos
-```
-----------
 ## Notes
 
-- Link iTerm prefs to `~/.dotfiles/iterm/com.googlecode.iterm2.plist`
+- Link iTerm prefs to `~/.dotfiles/.config/iTerm`
+- Install [Fire Code](https://github.com/tonsky/FiraCode) fonts

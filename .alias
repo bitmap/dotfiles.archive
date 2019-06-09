@@ -1,0 +1,82 @@
+# alias aliases
+alias sudo="sudo "
+alias git="git "
+alias node="node "
+alias npm="npm "
+alias npm="npm "
+
+# better ls
+alias ls="ls -G"
+alias la="ls -a"
+alias ll="ls -l"
+alias lla="ls -la"
+
+# better mkdir
+alias mkdir="mkdir -pv"
+
+# quick clear
+alias x="clear"
+
+# quick nav
+alias ~="cd ~"
+alias ..="cd .."
+
+# interactive/verbose tasks
+alias rm="rm -ivr"
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias ln="ln -iv"
+
+# rimraf
+alias rimraf="rm -rf"
+
+# git aliases
+alias g="git"
+alias ga="git add"
+alias gb="git branch"
+alias gc="git commit"
+alias gco="git checkout"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gf="git fetch"
+alias gg="git push"
+alias gl="git lg"
+alias gm="git merge"
+alias gn="git checkout -b"
+alias gp="git pull"
+alias gr="git reset HEAD --"
+alias gs="git status"
+alias gss="git status --short"
+
+# node / npm aliases
+alias n="node"
+alias ni="npm install"
+alias nid="npm install --save-dev"
+alias nig="npm install --global"
+alias nix="npm cache clean && rm -rf node_modules && npm install"
+alias nln="npm link"
+alias nls="npm list --depth=0"
+alias nlsg="npm list --depth=0 --global "
+alias nu="npm uninstall"
+alias nug="npm uninstall --global"
+
+# npm run shortcuts
+alias nr="npm run"
+alias ns="npm run start"
+alias nt="npm run test"
+alias nb="npm run build"
+
+# python aliases
+alias python="python3"
+alias pip="pip3"
+alias p="python"
+
+# sleep
+alias zzz="pmset displaysleepnow"
+alias ZZZ="pmset sleepnow"
+
+# restart
+alias ugh="osascript -e 'tell app \"System Events\" to restart'"
+
+# fuck
+eval $(thefuck --alias)
