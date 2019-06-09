@@ -4,20 +4,14 @@
 [alias]
   it = !git init && git commit -m “root” --allow-empty
   got = pull --rebase origin master
-  redo = commit -a -c ORIG_HEAD
+  please = push --force-with-lease
+  new-branch = checkout -b
   amend = commit --amend
-  ammend = commit --amend # can't spell
-  commend = commit --amend --no-edit
-  undo = reset --soft HEAD^
+  recommit = commit --amend --no-edit
+  uncommit = reset --soft HEAD^
   fucked = reset --hard HEAD
-  off = git checkout --
-  stsh = stash --keep-index
   hoard = stash --include-untracked
-  pop = stash pop
-  drop = stash drop
-  shorty = status --short --branch
-  merc = merge --no-ff
-  grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
   excludesfile = ~/.gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX

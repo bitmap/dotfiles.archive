@@ -1,7 +1,25 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'srcery-colors/srcery-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+
 " pretty
 syntax enable
-set background=dark
-colorscheme base16-default-dark
+set t_Co=256
+colorscheme srcery
 
 " enter the current millennium
 set nocompatible
@@ -19,9 +37,6 @@ set wildmenu
 " INSERT tweaks
 set esckeys
 set backspace=indent,eol,start
-
-" status line
-" set laststatus=2
 
 " enable mouse
 set mouse=a
@@ -56,3 +71,10 @@ set lazyredraw
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+
+" status line
+let g:lightline = {
+      \ 'colorscheme': 'srcery',
+      \ }
+set laststatus=2
+set noshowmode
