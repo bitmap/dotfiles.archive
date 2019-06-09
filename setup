@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-FILES=".bashrc .bash_profile .vimrc .vim .gitconfig .gitignore .inputrc .nvm/default-packages"
+function SETUP {
+	local DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+	local FILES=".alias .zshrc .vimrc .gitconfig .gitignore .inputrc .nvm/default-packages"
 
-vscode() {
-	echo "Creating symlink to ${1}/snippets..."
-	rm -rf "${1}/snippets"
-	ln -s "${DIR}/.vscode/snippets/" "${1}/snippets"
+	function VSCODE {
+		rm -rf "${1}/snippets"
+		ln -vs "${DIR}/.config/Code/User/snippets/" "${1}/snippets"
 
-	echo "Creating symlink to ${1}/settings.json..."
-	rm "${1}/settings.json"
-	ln -s "${DIR}/.vscode/settings.json" "${1}/settings.json"
-}
+		rm "${1}/settings.json"
+		ln -vs "${DIR}/.config/Code/User/settings.json" "${1}/settings.json"
+	}
 
-dotfiles() {
 	for FILE in $FILES; do
 		# create if doesn't exist
 		if [ -e "$FILE" ]; then
@@ -24,8 +22,7 @@ dotfiles() {
 		rm -r $HOME/$FILE
 
 		# make new symlink
-    echo "Creating symlink to $HOME/$FILE..."
-    ln -s $DIR/$FILE $HOME/$FILE
+    ln -vs $DIR/$FILE $HOME/$FILE
 	done
 
 	# symlink vscode if it's istalled
@@ -33,27 +30,23 @@ dotfiles() {
 	local LINUX=$HOME/.config/Code/User
 
 	if [ -d "$MACOS" ]; then
-		vscode "$MACOS"
+		VSCODE "$MACOS"
 	elif [ -f "$LINUX" ]; then
-		vscode "$LINUX"
+		VSCODE "$LINUX"
 	else echo "Can't find VS Code settings"
 	fi
 
 	touch $HOME/.hushlogin
-	source $HOME/.bashrc;
 
-	echo "Done. Bye."
+	echo -e "\n...Done. To update, restart terminal."
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	dotfiles;
+	SETUP;
 else
-	read -p "This will overwrite existing files. Are you sure? (y/n) " -n 1;
+	read -p "Install dotfiles? This will overwrite files in your home directory [y/n]" -n 1;
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		dotfiles;
+		SETUP;
 	fi;
 fi;
-
-unset DIR;
-unset FILES;
