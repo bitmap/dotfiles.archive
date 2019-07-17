@@ -11,6 +11,9 @@ alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
 
+# ls sort by size
+alias sz='ls -l | sort -n +3 | tail -10'
+
 # better mkdir
 alias mkdir="mkdir -pv"
 
@@ -36,6 +39,8 @@ alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
 alias gco="git checkout"
+alias g--="git checkout --"
+alias gcom="git checkout master"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gf="git fetch"
@@ -51,14 +56,13 @@ alias gss="git status --short"
 # node / npm aliases
 alias n="node"
 alias ni="npm install"
-alias nid="npm install --save-dev"
-alias nig="npm install --global"
-alias nix="npm cache clean && rm -rf node_modules && npm install"
+alias nd="npm install --save-dev"
+alias ng="npm install --global"
+alias nx="npm cache clean && rm -rf node_modules && npm install"
 alias nln="npm link"
 alias nls="npm list --depth=0"
 alias nlsg="npm list --depth=0 --global "
 alias nu="npm uninstall"
-alias nug="npm uninstall --global"
 
 # npm run shortcuts
 alias nr="npm run"

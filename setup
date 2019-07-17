@@ -1,6 +1,52 @@
 #!/usr/bin/env bash
 
 function SETUP {
+	# change shell to zsh
+	chsh -s $(which zsh)
+
+	# install Xcode command-line tools
+	xcode-select --install
+
+	# install homebrew
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+	# install python
+	brew install python
+	sudo easy_install pip
+
+	# install misc tools
+	brew install diff-so-fancy
+	brew install ffmpeg
+	brew install heroku
+	brew install imagemagick
+	brew install thefuck
+	brew install wget
+	brew install yarn --ignore-dependencies
+	brew install youtube-dl
+
+	# install apps
+	brew cask install 1password
+	brew cask install chrome
+	brew cask install docker
+	brew cask install figma
+	brew cask install firefox
+	brew cask install iterm2
+	brew cask install postman
+	brew cask install sketch
+	brew cask install slack
+	brew cask install spectacle
+	brew cask install spotify
+	brew cask install transmit
+	brew cask install visual-studio-code
+	brew cask install vlc
+
+	# install nvm and node
+	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+	nvm install node
+	nvm alias default node
+}
+
+function SYMLINK {
 	local DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 	local FILES=".alias .zshrc .vimrc .gitconfig .gitignore .inputrc .nvm/default-packages"
 
@@ -43,10 +89,12 @@ function SETUP {
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	SETUP;
+	SYMLINK;
 else
 	read -p "Install dotfiles? This will overwrite files in your home directory [y/n]" -n 1;
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		SETUP;
+		SYMLINK;
 	fi;
 fi;

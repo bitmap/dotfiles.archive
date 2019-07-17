@@ -5,7 +5,8 @@
   it = !git init && git commit -m “root” --allow-empty
   got = pull --rebase origin master
   please = push --force-with-lease
-  new-branch = checkout -b
+  split = checkout -b
+  forget = checkout --
   amend = commit --amend
   recommit = commit --amend --no-edit
   uncommit = reset --soft HEAD^

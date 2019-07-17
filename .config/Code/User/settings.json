@@ -11,7 +11,7 @@
     "files.trimTrailingWhitespace": true,
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Dracula",
-    "workbench.statusBar.visible": false,
+    "workbench.statusBar.visible": true,
     "eslint.autoFixOnSave": true,
     "eslint.validate": [
         "javascript",
@@ -25,4 +25,9 @@
             "autoFix": true
         }
     ],
+    "jest.pathToConfig": "./jest.config.js",
+    "[markdown]": {
+        "editor.defaultFormatter": "tehnix.vscode-tidymarkdown"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "never",
 }
