@@ -11,18 +11,25 @@ zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
 
 # mkdir and cd function
-md () {
+md() {
   mkdir -p $1
   cd $1
 }
 
 # get global and local ip
-ip () {
+ip() {
   echo -e "$(dig +short myip.opendns.com @resolver1.opendns.com)\n$(ipconfig getifaddr en0)"
 }
 
 # killport
-killport () { lsof -n -i4TCP:"$@" | grep LISTEN | tr -s " " | cut -f 2 -d " " | xargs kill -9; }
+kp() { lsof -n -i4TCP:"$@" | grep LISTEN | tr -s " " | cut -f 2 -d " " | xargs kill -9; }
+
+# push new git branch to origin
+pushup() {
+  local branch=$(git rev-parse --abbrev-ref HEAD)
+  echo Pushing to ${branch}
+  git push -u origin ${branch}
+}
 
 # git status
 git_status() {
@@ -68,3 +75,4 @@ PROMPT='%F{blue}${PWD/#$HOME/~}%f $(git_status) ${NEWLINE}%F{white}$%f '
 # This loads nvm
 export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
