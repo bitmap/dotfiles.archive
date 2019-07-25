@@ -30,4 +30,11 @@
         "editor.defaultFormatter": "tehnix.vscode-tidymarkdown"
     },
     "javascript.updateImportsOnFileMove.enabled": "never",
+    "bracket-pair-colorizer-2.colors": [
+        "#f1fa8c",
+        "#bd93f9",
+        "#8be9fd"
+    ],
+    "bracket-pair-colorizer-2.showBracketsInGutter": true,
+    "bracket-pair-colorizer-2.showHorizontalScopeLine": false
 }

@@ -1,18 +1,9 @@
-# alias aliases
-alias sudo="sudo "
-alias git="git "
-alias node="node "
-alias npm="npm "
-alias npm="npm "
-
 # better ls
 alias ls="ls -G"
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
-
-# ls sort by size
-alias sz='ls -l | sort -n +3 | tail -10'
+alias lls='ls -l | sort -n +3 | tail -10'
 
 # better mkdir
 alias mkdir="mkdir -pv"
@@ -69,6 +60,7 @@ alias nr="npm run"
 alias ns="npm run start"
 alias nt="npm run test"
 alias nb="npm run build"
+alias nl="npm run lint"
 
 # python aliases
 alias python="python3"
@@ -81,6 +73,3 @@ alias ZZZ="pmset sleepnow"
 
 # restart
 alias ugh="osascript -e 'tell app \"System Events\" to restart'"
-
-# fuck
-eval $(thefuck --alias)

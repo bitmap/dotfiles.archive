@@ -1,10 +1,70 @@
 #!/usr/bin/env bash
+
+tools=(
+  diff-so-fancy
+  ffmpeg
+  heroku
+  imagemagick
+  wget
+  youtube-dl
+)
+
+apps=(
+  1password
+  a-better-finder-rename
+  applepi-baker
+  balenaetcher
+  chrome
+  docker
+  figma
+  firefox
+  handbrake
+  imageoptim
+  iterm2
+  postman
+  sketch
+  slack
+  sequel-pro
+  spectacle
+  spotify
+  the-unarchiver
+  transmission
+  transmit
+  visual-studio-code
+  vlc
+)
+
 sudo -v
 
 # Keep-alive sudo
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+echo "Installing Xcode command line tools"
+xcode-select --install
+
+echo "Installing Homebrew..."
+echo | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo "Installing NVM"
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+echo "Installing Python..."
+brew install python
+sudo easy_install pip
+
+echo "Installing misc dev tools..."
+for tool in ${tools[@]}; do brew install $tool; done
+
+echo "Installing Apps..."
+for app in ${apps[@]}; do brew cask install $app; done
+
 echo "Setting macOS Preferences..."
+
+# Set computer name
+sudo scutil --set ComputerName "0x8A"
+sudo scutil --set HostName "0x8A"
+sudo scutil --set LocalHostName "0x8A"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x8A"
 
 # Set sidebar icon size to small
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
@@ -97,9 +157,6 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Enable spring loading for directories
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 
-# Remove the spring loading delay for directories
-defaults write NSGlobalDomain com.apple.springing.delay -float 0
-
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
@@ -169,15 +226,12 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-for app in "Activity Monitor" \
-  "Dock" \
-  "Finder" \
-  "SystemUIServer" \
-  "Terminal"; do
-	killall "${app}" &> /dev/null
-done
+# change shell to zsh
+sudo chsh -s $(which zsh)
 
-read -p "Done. Restart? (y/n)" -n 1;
+source ./setup.sh -f
+
+read -p "Finished install. I recommend a restart. Restart now? (y/n)" -n 1;
 echo "";
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   osascript -e 'tell app "System Events" to restart'
