@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-function SYMLINK {
+function SYMLINK() {
 	echo "Symlinking dotfiles..."
 	echo ""
 
-	local DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+	local DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 	local FILES=(
 		.alias
 		.zshrc
@@ -15,7 +15,7 @@ function SYMLINK {
 		.nvm/default-packages
 	)
 
-	function VSCODE {
+	function VSCODE() {
 		rm -rf "${1}/snippets"
 		ln -vs "${DIR}/.config/Code/User/snippets/" "${1}/snippets"
 
@@ -33,7 +33,7 @@ function SYMLINK {
 		rm -r $HOME/$FILE
 
 		# make new symlink
-    ln -vs $DIR/$FILE $HOME/$FILE
+		ln -vs $DIR/$FILE $HOME/$FILE
 	done
 
 	# symlink vscode if it's istalled
@@ -44,7 +44,8 @@ function SYMLINK {
 		VSCODE "$MACOS"
 	elif [ -d "$LINUX" ]; then
 		VSCODE "$LINUX"
-	else echo "Can't find VS Code settings"
+	else
+		echo "Can't find VS Code settings"
 	fi
 
 	touch $HOME/.hushlogin
@@ -53,11 +54,11 @@ function SYMLINK {
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	SYMLINK;
+	SYMLINK
 else
-	read -p "Install dotfiles? This will overwrite files in your home directory [y/n]" -n 1;
-	echo "";
+	read -p "Install dotfiles? This will overwrite files in your home directory [y/n]" -n 1
+	echo ""
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		SYMLINK;
-	fi;
-fi;
+		SYMLINK
+	fi
+fi
