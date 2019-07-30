@@ -3,7 +3,6 @@
 tools=(
   diff-so-fancy
   ffmpeg
-  heroku
   imagemagick
   wget
   youtube-dl
@@ -14,10 +13,10 @@ apps=(
   a-better-finder-rename
   applepi-baker
   balenaetcher
-  chrome
   docker
   figma
   firefox
+  google-chrome
   handbrake
   imageoptim
   iterm2
@@ -37,7 +36,11 @@ apps=(
 sudo -v
 
 # Keep-alive sudo
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
 
 echo "Installing Xcode command line tools"
 xcode-select --install
@@ -231,8 +234,8 @@ sudo chsh -s $(which zsh)
 
 source ./setup.sh -f
 
-read -p "Finished install. I recommend a restart. Restart now? (y/n)" -n 1;
-echo "";
+read -p "Finished install. I recommend a restart. Restart now? (y/n)" -n 1
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   osascript -e 'tell app "System Events" to restart'
-fi;
+fi
