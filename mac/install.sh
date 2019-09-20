@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 tools=(
+  git
   diff-so-fancy
   ffmpeg
   imagemagick
@@ -60,6 +61,10 @@ for tool in ${tools[@]}; do brew install $tool; done
 
 echo "Installing Apps..."
 for app in ${apps[@]}; do brew cask install $app; done
+
+echo "Installing Fonts..."
+brew tap caskroom/fonts
+brew cask install font-fira-code
 
 echo "Setting macOS Preferences..."
 
