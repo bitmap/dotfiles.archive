@@ -5,13 +5,21 @@
     "editor.fontSize": 14,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderWhitespace": "none",
     "editor.tabSize": 2,
+    "explorer.confirmDelete": false,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "python.formatting.provider": "black",
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Dracula",
-    "workbench.statusBar.visible": false,
+    "workbench.colorCustomizations": {
+        "[Default Dark+]": {
+            "statusBar.background" : "#2D2D2D",
+            "statusBar.noFolderBackground" : "#2D2D2D",
+        },
+    },
+    "workbench.statusBar.visible": true,
     "eslint.autoFixOnSave": true,
     "eslint.validate": [
         "javascript",
@@ -25,4 +33,5 @@
             "autoFix": true
         }
     ],
+    "window.zoomLevel": 0,
 }

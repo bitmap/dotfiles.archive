@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+is_linux () { [[ "$OSTYPE" == *'linux'* ]]; }
+is_macOS () { [[ "$OSTYPE" == *'darwin'* ]]; }
+
 function SYMLINK() {
 	echo "Symlinking dotfiles..."
 	echo ""
@@ -15,7 +18,7 @@ function SYMLINK() {
 		.nvm/default-packages
 	)
 
-	function VSCODE() {
+	function vsocde() {
 		rm -rf "${1}/snippets"
 		ln -vs "${DIR}/.config/Code/User/snippets/" "${1}/snippets"
 
@@ -37,13 +40,13 @@ function SYMLINK() {
 	done
 
 	# symlink vscode if it's istalled
-	local MACOS=$HOME/"Library/Application Support/Code/User"
-	local LINUX=$HOME/.config/Code/User
+	local macOS_dir=$HOME/"Library/Application Support/Code/User"
+	local linux_dir=$HOME/.config/Code/User
 
-	if [ -d "$MACOS" ]; then
-		VSCODE "$MACOS"
-	elif [ -d "$LINUX" ]; then
-		VSCODE "$LINUX"
+	if is_macOS && [ -d "$macOS_dir" ]; then
+		vsocde "$macOS_dir"
+	elif is_linux && [ -d "$linux_dir" ]; then
+		vsocde "$linux_dir"
 	else
 		echo "Can't find VS Code settings"
 	fi

@@ -24,6 +24,20 @@ ip() {
 # killport
 kp() { lsof -n -i4TCP:"$@" | grep LISTEN | tr -s " " | cut -f 2 -d " " | xargs kill -9; }
 
+# backup
+backup () {
+  if [[ -e $1 ]]; then
+    echo "Backing up $1..."
+    mv $1 $1.backup
+  fi
+}
+
+# symlink
+symlink () {
+  echo "Symlinking $1 as $2..."
+  ln -sf $1 $2
+}
+
 # push new git branch to origin
 pushup() {
   local branch=$(git rev-parse --abbrev-ref HEAD)
