@@ -6,7 +6,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'srcery-colors/srcery-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
@@ -16,10 +16,14 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
+" dracula settings
+let g:dracula_italic = 0
+let g:dracula_colorterm = 0
+
 " pretty
 syntax enable
-set t_Co=256
-colorscheme srcery
+set termguicolors
+colorscheme dracula
 
 " enter the current millennium
 set nocompatible
@@ -73,8 +77,6 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 " status line
-let g:lightline = {
-      \ 'colorscheme': 'srcery',
-      \ }
+let g:lightline = { 'colorscheme': 'dracula' }
 set laststatus=2
 set noshowmode
