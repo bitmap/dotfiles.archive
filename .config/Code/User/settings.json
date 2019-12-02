@@ -19,6 +19,7 @@
             "statusBar.noFolderBackground" : "#2D2D2D",
         },
     },
+    "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.visible": true,
     "eslint.autoFixOnSave": true,
     "eslint.validate": [
@@ -33,5 +34,4 @@
             "autoFix": true
         }
     ],
-    "window.zoomLevel": 0,
 }
