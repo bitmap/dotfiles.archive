@@ -7,6 +7,8 @@ tools=(
   imagemagick
   wget
   youtube-dl
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 apps=(
