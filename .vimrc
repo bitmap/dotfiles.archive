@@ -16,17 +16,14 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
-" dracula settings
-let g:dracula_italic = 0
-let g:dracula_colorterm = 0
+" enter the current millennium
+set t_Co=256
+set termguicolors
+set nocompatible
 
 " pretty
 syntax enable
-set termguicolors
 colorscheme dracula
-
-" enter the current millennium
-set nocompatible
 
 " enable syntax and plugins
 filetype plugin on

@@ -52,6 +52,10 @@ git_status() {
   local -a FLAGS
   local GIT_LOCATION=${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}
 
+  # stashed
+  if git rev-parse --verify refs/stash &>/dev/null; then
+    FLAGS+="%F{8}≡$(git stash list | wc -l | sed 's/^ *//')%f";
+  fi;
   # merging
   local GIT_DIR="$(git rev-parse --git-dir 2> /dev/null)"
   if [ -n $GIT_DIR ] && test -r $GIT_DIR/MERGE_HEAD; then
@@ -69,22 +73,26 @@ git_status() {
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
     FLAGS+="%F{cyan}?$(git ls-files --others --exclude-standard | wc -l | sed 's/^ *//')%f"
   fi
-  # stashed
-  if git rev-parse --verify refs/stash &>/dev/null; then
-    FLAGS+="%F{magenta}⚑$(git stash list | wc -l | sed 's/^ *//')%f";
-  fi;
 
   local -a GIT_INFO
-  GIT_INFO+=( " %F{white}$GIT_LOCATION%f" )
+  GIT_INFO+=( "%F{8} %F{magenta}$GIT_LOCATION%f" )
   [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j: :)FLAGS}" )
   echo "${(j: :)GIT_INFO}"
 }
 
 # prompt
 setopt prompt_subst
-precmd() { print "" }
+precmd() {
+  # Print a newline before the prompt, unless it's the
+  # first prompt in the process.
+  if [ -z "$NEW_LINE_BEFORE_PROMPT" ]; then
+    NEW_LINE_BEFORE_PROMPT=1
+  elif [ "$NEW_LINE_BEFORE_PROMPT" -eq 1 ]; then
+    echo ""
+  fi
+}
 NEWLINE=$'\n'
-PROMPT='%F{blue}${PWD/#$HOME/~}%f $(git_status) ${NEWLINE}%F{white}$%f '
+PROMPT='%F{blue}${PWD/#$HOME/~}%f $(git_status) ${NEWLINE}%F{green}$%f '
 
 # This loads nvm
 export NVM_DIR=~/.nvm
