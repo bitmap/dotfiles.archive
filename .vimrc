@@ -16,6 +16,9 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
+" turn off italics in dracula
+let g:dracula_italic = 0
+
 " enter the current millennium
 set t_Co=256
 set termguicolors

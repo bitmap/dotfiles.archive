@@ -1049,7 +1049,7 @@
 			<key>Use Bright Bold</key>
 			<false/>
 			<key>Use Italic Font</key>
-			<true/>
+			<false/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Use Underline Color</key>
@@ -1086,7 +1086,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>BACB49DA-98B8-4885-9F8D-BFD1DD34E6D7</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>19</integer>
+	<integer>20</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
