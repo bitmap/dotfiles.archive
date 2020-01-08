@@ -30,4 +30,5 @@
         "typescript",
         "typescriptreact",
     ],
+    "window.zoomLevel": 0,
 }
