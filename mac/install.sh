@@ -24,10 +24,10 @@ apps=(
   imageoptim
   iterm2
   postman
+  rectangle
   sketch
   slack
   sequel-pro
-  spectacle
   spotify
   the-unarchiver
   transmission

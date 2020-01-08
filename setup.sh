@@ -18,12 +18,20 @@ function SYMLINK() {
 		.nvm/default-packages
 	)
 
-	function vsocde() {
-		rm -rf "${1}/snippets"
-		ln -vs "${DIR}/.config/Code/User/snippets/" "${1}/snippets"
+	function copy_vscode_settings() {
+		local SNIPPETS="${1}/snippets"
+		local SETTINGS="${1}/settings.json"
 
-		rm "${1}/settings.json"
-		ln -vs "${DIR}/.config/Code/User/settings.json" "${1}/settings.json"
+		# create settings file if it doesn't exist
+		touch "${SETTINGS}"
+
+		#symlink settings
+		rm "${SETTINGS}"
+		ln -vs "${DIR}/.config/Code/User/settings.json" "${SETTINGS}"
+
+		#symlink snippets
+		rm -rf "${SNIPPETS}"
+		ln -vs "${DIR}/.config/Code/User/snippets/" "${SNIPPETS}"
 	}
 
 	for FILE in ${FILES[@]}; do
@@ -44,9 +52,9 @@ function SYMLINK() {
 	local linux_dir=$HOME/.config/Code/User
 
 	if is_macOS && [ -d "$macOS_dir" ]; then
-		vsocde "$macOS_dir"
+		copy_vscode_settings "$macOS_dir"
 	elif is_linux && [ -d "$linux_dir" ]; then
-		vsocde "$linux_dir"
+		copy_vscode_settings "$linux_dir"
 	else
 		echo "Can't find VS Code settings"
 	fi
