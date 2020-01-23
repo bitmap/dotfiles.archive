@@ -5,9 +5,9 @@ tools=(
   diff-so-fancy
   ffmpeg
   imagemagick
+  python
   wget
   youtube-dl
-  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
@@ -54,11 +54,7 @@ echo | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 echo "Installing NVM"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
-echo "Installing Python..."
-brew install python
-sudo easy_install pip
-
-echo "Installing misc dev tools..."
+echo "Installing dev tools..."
 for tool in ${tools[@]}; do brew install $tool; done
 
 echo "Installing Apps..."
@@ -68,6 +64,7 @@ echo "Installing Fonts..."
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code
 
+echo "Symlinking settings..."
 source ./setup.sh -f
 
 read -p "Finished install. I recommend a restart. Restart now? (y/n)" -n 1
