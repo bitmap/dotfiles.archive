@@ -67,6 +67,10 @@ brew cask install font-fira-code
 echo "Symlinking settings..."
 source ./setup.sh -f
 
+echo "Linking iTerm preferences..."
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/.config/iTerm"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
 read -p "Finished install. I recommend a restart. Restart now? (y/n)" -n 1
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
