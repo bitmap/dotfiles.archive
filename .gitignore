@@ -1,11 +1,23 @@
+# OS junk
 .DS_Store
 ._*
 .Spotlight-V100
 .Trashes
 Desktop.ini
 Thumbs.db
-*.log
+
+# node 
 node_modules
+
+# common build dirs
 dist
 build
+out
 .next
+
+# vim
+*.swp
+
+# log giles
+*.log
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json

@@ -24,7 +24,7 @@ alias ln="ln -iv"
 # rimraf
 alias rimraf="rm -rf"
 
-# git aliases
+# git aliases (git 2.23+)
 alias g="git"
 alias ga="git add"
 alias gb="git branch"
@@ -42,6 +42,7 @@ alias gn="git switch -c"
 alias gnb="git switch -c"
 alias gp="git pull"
 alias gr="git reset HEAD --"
+alias grb="git rebase -i"
 alias grs="git restore --staged"
 alias gs="git status"
 alias gss="git status --short"

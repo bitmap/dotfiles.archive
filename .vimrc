@@ -18,6 +18,7 @@ call plug#end()
 
 " turn off italics in dracula
 let g:dracula_italic = 0
+let g:dracula_colorterm = 0
 
 " enter the current millennium
 set t_Co=256
@@ -80,3 +81,7 @@ let &t_EI = "\<Esc>[2 q"
 let g:lightline = { 'colorscheme': 'dracula' }
 set laststatus=2
 set noshowmode
+
+" set undo directory
+set undodir=~/.vim/undo
+
