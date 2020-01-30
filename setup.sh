@@ -60,6 +60,9 @@ function SYMLINK() {
 	fi
 
 	touch $HOME/.hushlogin
+	mkdir $HOME/.vim/undo
+	mkdir $HOME/dev
+	mkdir $HOME/scratch
 
 	echo -e "\n...Done."
 }
