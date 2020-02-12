@@ -25,7 +25,7 @@ ip() {
 kp() { lsof -n -i4TCP:"$@" | grep LISTEN | tr -s " " | cut -f 2 -d " " | xargs kill -9; }
 
 # clone
-gh() {
+clone() {
   git clone "git@github.com:${1}.git"
 }
 
