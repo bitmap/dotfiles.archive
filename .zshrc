@@ -76,7 +76,7 @@ git_status() {
   fi
   # untracked
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    FLAGS+="%F{cyan}?$(git ls-files --others --exclude-standard | wc -l | sed 's/^ *//')%f"
+    FLAGS+="%F{blue}?$(git ls-files --others --exclude-standard | wc -l | sed 's/^ *//')%f"
   fi
 
   local -a GIT_INFO
@@ -97,7 +97,7 @@ precmd() {
   fi
 }
 NEWLINE=$'\n'
-PROMPT='%F{blue}${PWD/#$HOME/~}%f $(git_status) ${NEWLINE}%F{green}$%f '
+PROMPT='%F{cyan}${PWD/#$HOME/~}%f $(git_status) ${NEWLINE}%F{green}$%f '
 
 # This loads nvm
 export NVM_DIR=~/.nvm

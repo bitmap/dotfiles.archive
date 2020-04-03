@@ -38,4 +38,9 @@
     "terminal.integrated.fontWeight": "400",
     "terminal.integrated.fontWeightBold": "400",
     "terminal.integrated.lineHeight": 1.1,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.accessibilitySupport": "off",
+    "workbench.colorTheme": "Dracula",
 }
