@@ -1,6 +1,7 @@
 # aliases
 source $HOME/.alias
 alias zrc="source ~/.zshrc"
+alias shoryuken="echo '→↓↘'"
 
 # enable zsh colors
 autoload -U colors && colors
@@ -30,7 +31,7 @@ clone() {
 }
 
 # backup
-backup () {
+backup() {
   if [[ -e $1 ]]; then
     echo "Backing up $1..."
     mv $1 $1.backup
@@ -38,7 +39,7 @@ backup () {
 }
 
 # symlink
-symlink () {
+symlink() {
   echo "Symlinking $1 as $2..."
   ln -sf $1 $2
 }
@@ -64,23 +65,23 @@ git_status() {
   # merging
   local GIT_DIR="$(git rev-parse --git-dir 2> /dev/null)"
   if [ -n $GIT_DIR ] && test -r $GIT_DIR/MERGE_HEAD; then
-    FLAGS+="%F{red}!!%f"
+    FLAGS+="%F{9}!!%f"
   fi
   # staged
   if ! git diff --cached --quiet 2> /dev/null; then
-    FLAGS+="%F{green}±$(git diff --cached --numstat | wc -l | sed 's/^ *//')%f"
+    FLAGS+="%F{10}±$(git diff --cached --numstat | wc -l | sed 's/^ *//')%f"
   fi
    # modified
   if ! git diff --quiet 2> /dev/null; then
-    FLAGS+="%F{yellow}•$(git diff-files --ignore-submodules --shortstat | sed -E 's/.* ([0-9]+) file.*/\1/')%f"
+    FLAGS+="%F{11}•$(git diff-files --ignore-submodules --shortstat | sed -E 's/.* ([0-9]+) file.*/\1/')%f"
   fi
   # untracked
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    FLAGS+="%F{blue}?$(git ls-files --others --exclude-standard | wc -l | sed 's/^ *//')%f"
+    FLAGS+="%F{14}?$(git ls-files --others --exclude-standard | wc -l | sed 's/^ *//')%f"
   fi
 
   local -a GIT_INFO
-  GIT_INFO+=( "%F{8} %F{magenta}$GIT_LOCATION%f" )
+  GIT_INFO+=( "%F{8} %F{13}$GIT_LOCATION%f" )
   [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j: :)FLAGS}" )
   echo "${(j: :)GIT_INFO}"
 }
@@ -96,8 +97,8 @@ precmd() {
     echo ""
   fi
 }
-NEWLINE=$'\n'
-PROMPT='%F{cyan}${PWD/#$HOME/~}%f $(git_status) ${NEWLINE}%F{green}$%f '
+NL=$'\n'
+PROMPT='%F{12}${PWD/#$HOME/$(whoami)}%f $(git_status) ${NL}%F{10}$%f '
 
 # This loads nvm
 export NVM_DIR=~/.nvm

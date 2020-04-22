@@ -1,4 +1,12 @@
 {
+	"log": {
+		"prefix": "clog",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"console.log(${0})"
+		],
+		"description": "console.log"
+	},
 	"import react": {
 		"prefix": "imr",
 		"scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -23,12 +31,20 @@
 		],
 		"description": "import styled-components"
 	},
+	"import box": {
+		"prefix": "imb",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"import { ${1|Box,Flex,Row,Col|}${0} } from '@stnew/layout'"
+		],
+		"description": "import @stnew/layout"
+	},
 	"useEffect": {
 		"prefix": "ue",
 		"scope": "javascript,javascriptreact,typescript,typescriptreact",
 		"body": [
 			"useEffect(() => {",
-			"  ${1}",
+			"  ${0}",
 			"}, [])"
 		],
 		"description": "useEffect"
@@ -38,7 +54,7 @@
 		"scope": "javascript,javascriptreact,typescript,typescriptreact",
 		"body": [
 			"useLayoutEffect(() => {",
-			"  ${1}",
+			"  ${0}",
 			"}, [])"
 		],
 		"description": "useLayoutEffect"
@@ -58,5 +74,57 @@
 			"const [${1:state}, ${2:setState}] = useState(${3:null})"
 		],
 		"description": "useState"
+	},
+	"new fc": {
+		"prefix": "fc",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"function ${1:Foo}(${2}) {",
+			"  return ${0}",
+			"}"
+		],
+		"description": "Create new function component"
+	},
+	"new sc": {
+		"prefix": "sc",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"const ${1:Foo} = styled.${2:div}`",
+			"  ${0}",
+			"`"
+		],
+		"description": "Create new styled component"
+	},
+	"Box": {
+		"prefix": "box",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"<Box>${0}</Box>",
+		],
+		"description": "Box"
+	},
+	"Flex": {
+		"prefix": "flex",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"<Flex>${0}</Flex>",
+		],
+		"description": "Flex"
+	},
+	"Row": {
+		"prefix": "row",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"<Row>${0}</Row>",
+		],
+		"description": "Row"
+	},
+	"Col": {
+		"prefix": "col",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"body": [
+			"<Col>${0}</Col>",
+		],
+		"description": "Col"
 	}
 }

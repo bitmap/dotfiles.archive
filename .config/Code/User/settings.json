@@ -5,7 +5,7 @@
         "source.fixAll.eslint": true,
     },
     "editor.fontFamily": "FiraCode-Retina",
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero'",
     "editor.fontSize": 14,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
@@ -24,7 +24,7 @@
         },
     },
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.statusBar.visible": true,
+    "workbench.statusBar.visible": false,
     "eslint.validate": [
         "javascript",
         "javascriptreact",
@@ -42,5 +42,4 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "editor.accessibilitySupport": "off",
-    "workbench.colorTheme": "Dracula",
 }
