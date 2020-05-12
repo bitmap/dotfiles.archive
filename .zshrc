@@ -73,7 +73,7 @@ git_status() {
   fi
    # modified
   if ! git diff --quiet 2> /dev/null; then
-    FLAGS+="%F{11}•$(git diff-files --ignore-submodules --shortstat | sed -E 's/.* ([0-9]+) file.*/\1/')%f"
+    FLAGS+="%F{11}*$(git diff-files --ignore-submodules --shortstat | sed -E 's/.* ([0-9]+) file.*/\1/')%f"
   fi
   # untracked
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
@@ -81,7 +81,8 @@ git_status() {
   fi
 
   local -a GIT_INFO
-  GIT_INFO+=( "%F{8} %F{13}$GIT_LOCATION%f" )
+  GIT_INFO+=( "%F{8}%f" )
+  GIT_INFO+=( "%F{13}$GIT_LOCATION" )
   [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j: :)FLAGS}" )
   echo "${(j: :)GIT_INFO}"
 }
@@ -91,14 +92,16 @@ setopt prompt_subst
 precmd() {
   # Print a newline before the prompt, unless it's the
   # first prompt in the process.
+
   if [ -z "$NEW_LINE_BEFORE_PROMPT" ]; then
     NEW_LINE_BEFORE_PROMPT=1
   elif [ "$NEW_LINE_BEFORE_PROMPT" -eq 1 ]; then
     echo ""
   fi
 }
+
 NL=$'\n'
-PROMPT='%F{12}${PWD/#$HOME/$(whoami)}%f $(git_status) ${NL}%F{10}$%f '
+PROMPT='%F{12}%1~%f $(git_status) ${NL}%F{8}%# %f'
 
 # This loads nvm
 export NVM_DIR=~/.nvm

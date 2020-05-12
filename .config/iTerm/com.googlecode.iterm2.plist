@@ -467,9 +467,15 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 133 928 744 0 0 1440 877 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>176 323 728 554 0 0 1440 877 </string>
+	<string>176 125 928 744 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>197 47 928 744 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>218 24 928 744 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>292 74 928 744 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1152,7 +1158,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Retina 14</string>
+			<string>FiraCode-Retina 16</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -1276,6 +1282,7 @@
 	<array>
 		<string>3.3.7</string>
 		<string>3.3.8</string>
+		<string>3.3.9</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -1288,12 +1295,12 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{262, 724}</string>
+		<string>{422, 584}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>1429E71E-BBE6-477A-8EBA-CCD204E3A95C</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>18</integer>
+	<integer>39</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2052,9 +2059,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-03T15:25:51Z</date>
+	<date>2020-04-29T14:02:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>962788142</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SeparateStatusBarsPerPane</key>
@@ -2062,7 +2071,7 @@
 	<key>SeparateWindowTitlePerTab</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<false/>
 	<key>ShowPaneTitles</key>
@@ -2096,7 +2105,7 @@
 	<key>WindowNumber</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

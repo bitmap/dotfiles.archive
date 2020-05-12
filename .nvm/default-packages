@@ -1,8 +1,7 @@
 create-react-app
-eslint
 gitlab-cmd
 localtunnel
-now
+vercel
 npm-check-updates
 serve
 typescript
