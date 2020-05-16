@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+# push new git branch to origin
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+print -P "Pushing to branch %F{4}$BRANCH%f"
+git push -u origin $BRANCH

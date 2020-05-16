@@ -11,18 +11,12 @@ alias mkdir="mkdir -pv"
 # quick clear
 alias x="clear"
 
-# quick nav
-alias ~="cd ~"
-alias ..="cd .."
-
 # interactive/verbose tasks
-alias rm="rm -ivr"
-alias cp="cp -iv"
-alias mv="mv -iv"
-alias ln="ln -iv"
-
-# rimraf
+alias remove="rm -ivr"
 alias rimraf="rm -rf"
+alias copy="cp -iv"
+alias move="mv -iv"
+alias link="ln -iv"
 
 # git aliases (git 2.23+)
 alias g="git"
@@ -87,3 +81,10 @@ alias ZZZ="pmset sleepnow"
 
 # restart
 alias ugh="osascript -e 'tell app \"System Events\" to restart'"
+
+#suffixed aliases
+alias -s js="node"
+
+# misc
+alias zrc="source ~/.zshrc"
+alias shoryuken="echo '→↓↘'"

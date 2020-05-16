@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# get public IP address
+function public_ip() {
+  dig +short ANY whoami.akamai.net @ns1-1.akamaitech.net
+}
+
+# get local IP address
+function local_ip() {
+  ipconfig getifaddr en0
+}
+
+print -P "\n  $(local_ip)\n  $(public_ip)"
