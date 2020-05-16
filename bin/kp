@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+# kill port
+lsof -n -i4TCP:"$@" | grep LISTEN | tr -s " " | cut -f 2 -d " " | xargs kill -9;
