@@ -2,7 +2,7 @@
     "breadcrumbs.enabled": false,
     "editor.cursorBlinking": "phase",
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
+        "source.fixAll": true,
     },
     "editor.fontFamily": "FiraCode-Retina",
     "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero'",
@@ -76,5 +76,5 @@
     "terminal.integrated.fontWeightBold": "400",
     "javascript.updateImportsOnFileMove.enabled": "never",
     "editor.suggestSelection": "first",
-    "editor.accessibilitySupport": "off",
+    "editor.accessibilitySupport": "off"
 }

@@ -75,16 +75,34 @@ alias python="python3"
 alias pip="pip3"
 alias p="python"
 
-# sleep
-alias zzz="pmset displaysleepnow"
-alias ZZZ="pmset sleepnow"
-
-# restart
-alias ugh="osascript -e 'tell app \"System Events\" to restart'"
-
 #suffixed aliases
 alias -s js="node"
+alias -s py="python3"
+alias -s git="git clone"
+
+# bulk association
+alias -s {md,json,css,ts,html}=code
 
 # misc
 alias zrc="source ~/.zshrc"
 alias shoryuken="echo '→↓↘'"
+
+# macOS aliasses
+if [[ $OSTYPE == darwin* ]]; then
+  # restart
+  alias ugh="osascript -e 'tell app \"System Events\" to restart'"
+
+  # sleep
+  alias zzz="pmset displaysleepnow"
+  alias ZZZ="pmset sleepnow"
+
+  # flush dns cache
+  alias flush='dscacheutil -flushcache'
+
+  # open slack
+  alias slack="open -a /Applications/Slack.app"
+  alias chrome="open -a /Applications/Google\ Chrome.app"
+
+  alias hub="chrome https://github.com"
+  alias gmail="chrome https://gmail.com"
+fi

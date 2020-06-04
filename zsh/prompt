@@ -15,7 +15,8 @@ precmd() {
 }
 
 NL=$'\n'
+CHAR='λ'
 PROMPT='%F{12}%1~%f '
 PROMPT+='$(git-stats)'
-PROMPT+='${NL}%F{8}> %f'
+PROMPT+='${NL}%F{8}${CHAR} %f'
 RPROMPT=''

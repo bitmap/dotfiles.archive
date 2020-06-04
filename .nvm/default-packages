@@ -1,7 +1,8 @@
 create-react-app
 gitlab-cmd
 localtunnel
-vercel
+nodemon
 npm-check-updates
 serve
 typescript
+vercel
