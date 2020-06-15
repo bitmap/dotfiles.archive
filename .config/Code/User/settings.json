@@ -76,5 +76,8 @@
     "terminal.integrated.fontWeightBold": "400",
     "javascript.updateImportsOnFileMove.enabled": "never",
     "editor.suggestSelection": "first",
-    "editor.accessibilitySupport": "off"
+    "editor.accessibilitySupport": "off",
+    "[markdown]": {
+        "editor.defaultFormatter": "tehnix.vscode-tidymarkdown"
+    }
 }
