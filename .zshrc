@@ -40,4 +40,4 @@ export NVM_DIR=~/.nvm
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # path
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/go/bin:$PATH
