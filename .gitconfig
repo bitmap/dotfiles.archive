@@ -9,7 +9,7 @@
   amend = commit --amend
   recommit = commit --amend --no-edit
   uncommit = reset --soft HEAD^
-  fucked = reset --hard HEAD^
+  fucked = reset --hard HEAD
   hoard = stash --include-untracked
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
