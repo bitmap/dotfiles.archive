@@ -6,7 +6,7 @@
 Desktop.ini
 Thumbs.db
 
-# node 
+# node
 node_modules
 
 # common build dirs
@@ -17,7 +17,8 @@ out
 
 # vim
 *.swp
+*.vi
 
-# log giles
+# log files
 *.log
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json

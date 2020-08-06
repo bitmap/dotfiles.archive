@@ -11,10 +11,10 @@ source $HOME/.dotfiles/zsh/prompt
 # case-insensitive globbing
 setopt NO_CASE_GLOB
 
- # automatic cd
+# automatic cd
 setopt AUTO_CD
 
- # autocorrect
+# autocorrect
 setopt CORRECT
 setopt CORRECT_ALL
 
@@ -24,10 +24,10 @@ autoload -U colors && colors
 # autocompletion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
-# partial completion suggestions
+## partial completion suggestions
 zstyle ':completion:*' list-suffixes
 zstyle ':completion:*' expand prefix suffix
-# case insensitive path-completion
+## case insensitive path-completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 setopt COMPLETE_ALIASES
 

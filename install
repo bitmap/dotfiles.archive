@@ -104,7 +104,7 @@ function install() {
 	touch $HOME/.hushlogin
 	mkdirs
 
-	print -P "%F{2}...Done!"
+	print -P "%F{2}...Done!%f"
 }
 
 if [ "$1" = "--force" -o "$1" = "-f" ]; then

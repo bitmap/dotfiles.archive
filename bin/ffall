@@ -1,5 +1,5 @@
 #!/bin/bash
 
 for i in *.${1:-mov};
-  do ffmp4 "$i" $2
+  do ffmp4 "$i" $2 $3
 done

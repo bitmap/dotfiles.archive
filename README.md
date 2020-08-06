@@ -19,9 +19,16 @@ cd .dotfiles
 ./install
 ```
 
-## Run install script for macOS
+## Run setup script for macOS
 
 ```sh
 cd .dotfiles
 ./mac/install
+./mac/defaults
+```
+
+### Brewfile
+
+```sh
+brew bundle --file ./mac/Brewfile
 ```

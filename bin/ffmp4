@@ -1,26 +1,13 @@
 #!/bin/bash
 
-quiet=''
-width='-1'
-height='-1'
-
-while getopts ":qw:h::" OPTION; do
-  case ${OPTION} in
-    q) quiet="-an";;
-    w) width="$OPTARG";;
-    h) height="$OPTARG";;
-  esac
-done
-shift "$(($OPTIND -1))"
-
 file=$1
 suffix=$2
+opts=$3
 
 ffmpeg -i $file \
-$quiet \
--vf scale=$width:$height \
 -vcodec libx264 \
 -pix_fmt yuv420p \
 -profile:v baseline \
 -level 3 \
+$opts \
 "${file%.*}${suffix}.mp4"

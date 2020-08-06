@@ -7,42 +7,6 @@ if [[ "$PWD" != "$HOME/.dotfiles" ]]; then
 	exit 1
 fi
 
-tools=(
-  git
-  diff-so-fancy
-  ffmpeg
-  imagemagick
-  python
-  wget
-  youtube-dl
-  zsh-syntax-highlighting
-)
-
-apps=(
-  1password
-  a-better-finder-rename
-  applepi-baker
-  balenaetcher
-  docker
-  figma
-  firefox
-  google-chrome
-  handbrake
-  imageoptim
-  iterm2
-  postman
-  rectangle
-  sketch
-  slack
-  sequel-pro
-  spotify
-  the-unarchiver
-  transmission
-  transmit
-  visual-studio-code
-  vlc
-)
-
 sudo -v
 
 # Keep-alive sudo
@@ -52,33 +16,26 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
-echo "Installing Xcode command line tools"
+echo "\nInstalling Xcode command line tools"
 xcode-select --install
 
-echo "Installing Homebrew..."
+echo "\nInstalling Homebrew..."
 echo | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-echo "Installing NVM"
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+echo "\nInstalling NVM"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
-echo "Installing dev tools..."
-for tool in ${tools[@]}; do brew install $tool; done
+echo "\nInstalling Apps and dev tools..."
+brew bundle --file ./mac/Brewfile
 
-echo "Installing Apps..."
-for app in ${apps[@]}; do brew cask install $app; done
-
-echo "Installing Fonts..."
-brew tap homebrew/cask-fonts
-brew cask install font-fira-code
-
-echo "Symlinking settings..."
+echo "\nSymlinking settings..."
 source ./install -f
 
-echo "Linking iTerm preferences..."
+echo "\nLinking iTerm preferences..."
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/.config/iTerm"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
-read "reply?Finished install. I recommend a restart. Restart now? (y/n)" -n 1
+read "reply?\nFinished install. I recommend a restart. Restart now? (y/n)" -n 1
 echo ""
 if [[ "$reply" =~ ^[Yy]$ ]]; then
   osascript -e 'tell app "System Events" to restart'

@@ -1,8 +1,10 @@
 create-react-app
 gitlab-cmd
+lerna
 localtunnel
 nodemon
 npm-check-updates
 serve
 typescript
 vercel
+yarn
