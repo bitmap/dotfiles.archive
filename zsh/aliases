@@ -86,6 +86,7 @@ alias -s {md,json,css,ts,html}=code
 # misc
 alias zrc="source ~/.zshrc"
 alias shoryuken="echo '→↓↘'"
+alias love="~/Applications/love.app/Contents/MacOS/love"
 
 # macOS aliasses
 if [[ $OSTYPE == darwin* ]]; then
