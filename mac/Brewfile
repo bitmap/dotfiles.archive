@@ -2,8 +2,6 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'github/gh'
 
-cask_args appdir: '~/Applications'
-
 brew 'diff-so-fancy'
 brew 'ffmpeg'
 brew 'git'
