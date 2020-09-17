@@ -467,9 +467,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 498 620 392 583 -800 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>583 -800 1280 777 583 -800 1280 777 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>416 139 1028 820 0 0 1920 1057 </string>
+	<string>446 119 1028 820 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>197 47 928 744 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -1170,7 +1170,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Retina 16</string>
+			<string>FiraCode-Retina 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -1317,12 +1317,12 @@
 		<key>screenFrame</key>
 		<string>{{583, -800}, {1280, 800}}</string>
 		<key>topLeft</key>
-		<string>{741, -141}</string>
+		<string>{754, -68}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>1429E71E-BBE6-477A-8EBA-CCD204E3A95C</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>68</integer>
+	<integer>88</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2107,7 +2107,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-28T13:05:10Z</date>
+	<date>2020-09-10T15:31:00Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>

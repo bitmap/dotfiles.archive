@@ -10,11 +10,16 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
 
 call plug#end()
+
+" utf-8
+set encoding=utf-8
 
 " turn off italics in dracula
 let g:dracula_italic = 0
@@ -64,6 +69,9 @@ set title
 set number
 set cursorline
 
+" map system keyboard to paster buffer
+set clipboard=unnamedplus
+
 " make tabs as wide as two spaces
 set expandtab
 set tabstop=2
@@ -85,3 +93,5 @@ set noshowmode
 " set undo directory
 set undodir=~/.vim/undo
 
+" remap Esc to jj
+inoremap jj <ESC>
