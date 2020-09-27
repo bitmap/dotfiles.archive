@@ -16,19 +16,19 @@ and run the install script
 
 ```sh
 cd .dotfiles
-./install
+./setup.sh
 ```
 
 ## Run setup script for macOS
 
 ```sh
 cd .dotfiles
-./mac/install
-./mac/defaults
+./mac/setup.sh
+./mac/defaults.sh
 ```
 
 ### Brewfile
 
 ```sh
-brew bundle --file ./mac/Brewfile
+brew bundle
 ```
