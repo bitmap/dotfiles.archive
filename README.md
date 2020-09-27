@@ -1,7 +1,7 @@
 # .dotfiles
 
 ```sh
-git clone git@github.com:bitmap/.dotfiles.git && cd .dotfiles
+git clone git@github.com:bitmap/dotfiles.git .dotfiles && cd .dotfiles
 ```
 
 ## Install
