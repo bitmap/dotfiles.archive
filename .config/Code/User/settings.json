@@ -26,6 +26,7 @@
   // UI
   "breadcrumbs.enabled": false,
   "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Default Dark+",
   "workbench.activityBar.visible": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorCustomizations": {
