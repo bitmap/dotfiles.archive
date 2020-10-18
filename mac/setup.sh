@@ -26,10 +26,10 @@ echo "\nInstalling NVM"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 echo "\nInstalling Apps and dev tools..."
-brew bundle --file ./mac/Brewfile
+brew bundle
 
 echo "\nSymlinking settings..."
-source ./install -f
+source ./setup.sh -f
 
 echo "\nLinking iTerm preferences..."
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/.config/iTerm"
