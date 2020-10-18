@@ -13,10 +13,13 @@ setopt NO_CASE_GLOB
 
 # automatic cd
 setopt AUTO_CD
+# unsetopt AUTO_CD
 
 # autocorrect
 setopt CORRECT
 setopt CORRECT_ALL
+# unsetopt CORRECT
+# unsetopt CORRECT_ALL
 
 # enable zsh colors
 autoload -U colors && colors
@@ -29,6 +32,8 @@ zstyle ':completion:*' list-suffixes
 zstyle ':completion:*' expand prefix suffix
 ## case insensitive path-completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
+## ignore
+zstyle ':completion:*:*:-command-:*:*' ignored-patterns 'ugit'
 setopt COMPLETE_ALIASES
 
 # This loads nvm
@@ -40,4 +45,4 @@ export NVM_DIR=~/.nvm
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # path
-export PATH=$HOME/bin:$HOME/go/bin:$PATH
+export PATH=$HOME/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH

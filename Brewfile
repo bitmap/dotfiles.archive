@@ -12,6 +12,7 @@ brew 'imagemagick'
 brew 'python'
 brew 'tmux'
 brew 'wget'
+brew 'yarn'
 brew 'youtube-dl'
 brew 'zsh-syntax-highlighting'
 

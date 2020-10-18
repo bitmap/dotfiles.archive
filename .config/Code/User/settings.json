@@ -1,84 +1,90 @@
 {
-  // Files
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  // Editor
-  "editor.accessibilitySupport": "off",
-  "editor.minimap.enabled": false,
-  "editor.fontFamily": "FiraCode-Retina",
-  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss07', 'ss08', 'zero'",
-  "editor.fontSize": 14,
-  "editor.renderWhitespace": "selection",
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.tabSize": 2,
-  "editor.detectIndentation": true,
-  "editor.formatOnSaveMode": "modifications",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  // Terminal
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.fontFamily": "FiraCode-Retina",
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.fontWeight": "400",
-  "terminal.integrated.fontWeightBold": "400",
-  // UI
-  "breadcrumbs.enabled": false,
-  "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "Default Dark+",
-  "workbench.activityBar.visible": false,
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorCustomizations": {
-    "[Default Dark+]": {
-      "statusBar.background": "#252526",
-      "statusBar.noFolderBackground": "#252526",
-      "terminal.foreground": "#D4D4D4",
-      "terminalCursor.foreground": "#D4D4D4",
-      "terminal.ansiBlack": "#252526",
-      "terminal.ansiRed": "#d16969",
-      "terminal.ansiGreen": "#6A9955",
-      "terminal.ansiYellow": "#d7ba7d",
-      "terminal.ansiBlue": "#569CD6",
-      "terminal.ansiMagenta": "#C586C0",
-      "terminal.ansiCyan": "#51B6C4",
-      "terminal.ansiWhite": "#D4D4D4",
-      "terminal.ansiBrightBlack": "#6D6D6D",
-      "terminal.ansiBrightRed": "#d16969",
-      "terminal.ansiBrightGreen": "#6A9955",
-      "terminal.ansiBrightYellow": "#d7ba7d",
-      "terminal.ansiBrightBlue": "#569CD6",
-      "terminal.ansiBrightMagenta": "#C586C0",
-      "terminal.ansiBrightCyan": "#51B6C4",
-      "terminal.ansiBrightWhite": "#D4D4D4"
-    }
-  },
-  // Language settings
-  "[javascript]": {
-    "editor.insertSpaces": true,
+    // Files
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    // Editor
+    "editor.accessibilitySupport": "off",
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss07', 'ss08', 'zero'",
+    "editor.fontSize": 14,
+    "editor.renderWhitespace": "selection",
+    "editor.multiCursorModifier": "ctrlCmd",
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[typescript]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[python]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 4
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  // Plugins
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-}
+    "editor.detectIndentation": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.rulers": [99],
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    // Terminal
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.fontFamily": "FiraCode-Retina",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontWeight": "400",
+    "terminal.integrated.fontWeightBold": "400",
+    // UI
+    "breadcrumbs.enabled": false,
+    "window.autoDetectColorScheme": true,
+    "window.zoomLevel": 0,
+    "workbench.activityBar.visible": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Dracula",
+    "workbench.colorCustomizations": {
+      "[Default Dark+]": {
+        "statusBar.background": "#252526",
+        "statusBar.noFolderBackground": "#252526",
+        "terminal.foreground": "#D4D4D4",
+        "terminalCursor.foreground": "#D4D4D4",
+        "terminal.ansiBlack": "#252526",
+        "terminal.ansiRed": "#d16969",
+        "terminal.ansiGreen": "#6A9955",
+        "terminal.ansiYellow": "#d7ba7d",
+        "terminal.ansiBlue": "#569CD6",
+        "terminal.ansiMagenta": "#C586C0",
+        "terminal.ansiCyan": "#51B6C4",
+        "terminal.ansiWhite": "#D4D4D4",
+        "terminal.ansiBrightBlack": "#6D6D6D",
+        "terminal.ansiBrightRed": "#d16969",
+        "terminal.ansiBrightGreen": "#6A9955",
+        "terminal.ansiBrightYellow": "#d7ba7d",
+        "terminal.ansiBrightBlue": "#569CD6",
+        "terminal.ansiBrightMagenta": "#C586C0",
+        "terminal.ansiBrightCyan": "#51B6C4",
+        "terminal.ansiBrightWhite": "#D4D4D4"
+      }
+    },
+    // Language settings
+    "[javascript]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[python]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 4
+    },
+    "[rust]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 4
+    },
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // Plugins
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ]
+  }
