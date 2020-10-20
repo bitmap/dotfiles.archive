@@ -36,6 +36,7 @@ function install() {
   local files=(
     .zshrc
     .vimrc
+    .gitattributes
     .gitconfig
     .gitignore
     .nvm/default-packages
