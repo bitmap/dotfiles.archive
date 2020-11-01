@@ -1,34 +1,23 @@
-# .dotfiles
+# dotfiles
+
+Clone the repository into a hidden `.dotfiles` folder in your home (`~`) directory.
 
 ```sh
 git clone git@github.com:bitmap/dotfiles.git .dotfiles && cd .dotfiles
 ```
 
-## Install
+## Setup
 
-Switch your shell to `zsh` to insure all scripts work correctly
-
-```sh
-chsh -s $(which zsh)
-```
-
-and run the install script
+This will symlink the dotfiles to your home diretcory.
 
 ```sh
-cd .dotfiles
 ./setup.sh
 ```
 
-## Run setup script for macOS
+## macOS Setup
+
+Run the bootstrap script from the `~/.dotfiles` directory.
 
 ```sh
-cd .dotfiles
-./mac/setup.sh
-./mac/defaults.sh
-```
-
-### Brewfile
-
-```sh
-brew bundle
+./macos/bootstrap.sh
 ```

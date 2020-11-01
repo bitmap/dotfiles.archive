@@ -8,15 +8,15 @@ if [[ "$PWD" != "$HOME/.dotfiles" ]]; then
 fi
 
 function install() {
-  local function linked() {
+  local function printSuccess() {
     print -P "%F{6}Linked%f ${1}"
   }
 
-  local function err() {
+  local function printError() {
     print -P "%F{1}Error!%f ${1}"
   }
 
-  local function mkdirs() {
+  local function makeDirs() {
     local dirs=(
       $HOME/.vim/undo
       $HOME/dev
@@ -46,7 +46,7 @@ function install() {
 
   # symlink bin
   rm "$HOME/bin"
-  ln -s "$DOTFILES_DIR/bin" "$HOME/bin" && linked "~/bin"
+  ln -s "$DOTFILES_DIR/bin" "$HOME/bin" && printSuccess "~/bin"
 
   for file in ${files[@]}; do
     local src=$DOTFILES_DIR/$file
@@ -59,14 +59,14 @@ function install() {
 
     # make new symlink
     if [ -f "$src" ]; then
-      (ln -s "$src" "$dest" && linked "~/$file") || err "Couldn't link %F{5}${file}%f"
+      (ln -s "$src" "$dest" && printSuccess "~/$file") || printError "Couldn't link %F{5}${file}%f"
     else
-      err "$src doesn't exist"
+      printError "$src doesn't exist"
     fi
   done
 
   touch $HOME/.hushlogin
-  mkdirs
+  makeDirs
 
   print -P "%F{2}...Done!%f"
 }

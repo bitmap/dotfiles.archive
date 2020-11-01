@@ -3,7 +3,7 @@
 local DOTS="$HOME/.dotfiles"
 
 if [[ "$PWD" != "$HOME/.dotfiles" ]]; then
-	print -P "%F{1}Error!%f Run script %F{4}./mac/install%f from %F{3}$DOTS%f"
+	print -P "%F{1}Error!%f Run script %F{4}./setup-macos%f from %F{3}$DOTS%f"
 	exit 1
 fi
 
@@ -20,23 +20,22 @@ echo "\nInstalling Xcode command line tools"
 xcode-select --install
 
 echo "\nInstalling Homebrew..."
-echo | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo "\nInstalling NVM"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
 
 echo "\nInstalling Apps and dev tools..."
-brew bundle
+brew bundle --file ./macos/Brewfile
 
 echo "\nSymlinking settings..."
 source ./setup.sh -f
 
 echo "\nLinking iTerm preferences..."
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/.config/iTerm"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$DOTS/macos/iterm"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
-read "reply?\nFinished install. I recommend a restart. Restart now? (y/n)" -n 1
-echo ""
-if [[ "$reply" =~ ^[Yy]$ ]]; then
-  osascript -e 'tell app "System Events" to restart'
-fi
+# macOS defaults
+source ./macos/defaults.sh
+
+echo "\nFinished install. Please restart."
