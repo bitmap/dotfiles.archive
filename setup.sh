@@ -40,6 +40,7 @@ function install() {
     .gitconfig
     .gitignore
     .nvm/default-packages
+    .prettierrc
   )
 
   print -P "%F{3}Symlinking%f from %F{4}$DOTFILES_DIR%f"

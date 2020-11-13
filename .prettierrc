@@ -1,0 +1,10 @@
+printWidth: 99
+trailingComma: "all"
+tabWidth: 2
+semi: false
+singleQuote: true
+quoteProps: "consistent"
+bracketSpacing: true
+arrowParens: "avoid"
+jsxBracketSameLine: false
+useTabs: false
