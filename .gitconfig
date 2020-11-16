@@ -43,3 +43,5 @@
   helper = osxkeychain
 [include]
   gitlab = .gitlab/.gitconfig
+[merge]
+	ff = only
