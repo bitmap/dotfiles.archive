@@ -5,7 +5,7 @@
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>CompactMinimalTabBarHeight</key>
-	<real>53</real>
+	<real>38</real>
 	<key>CopySelection</key>
 	<false/>
 	<key>Custom Color Presets</key>
@@ -369,18 +369,22 @@
 	<string>92DD3E83-388C-46D0-AED1-4C0BAD3B5C99</string>
 	<key>DefaultTabBarHeight</key>
 	<real>24</real>
+	<key>DimBackgroundWindows</key>
+	<false/>
 	<key>DimInactiveSplitPanes</key>
 	<false/>
 	<key>DimOnlyText</key>
 	<false/>
+	<key>DisableFullscreenTransparency</key>
+	<false/>
 	<key>DoubleClickPerformsSmartSelection</key>
 	<true/>
 	<key>EnableDivisionView</key>
-	<true/>
+	<false/>
 	<key>EnableProxyIcon</key>
 	<false/>
 	<key>ExtraSpaceBeforeCompactTopTabBar</key>
-	<real>1000</real>
+	<real>0.0</real>
 	<key>FlashTabBarInFullscreen</key>
 	<false/>
 	<key>HapticFeedbackForEsc</key>
@@ -408,7 +412,7 @@
 	<key>MinimalTabStyleBackgroundColorDifference</key>
 	<real>0.05000000074505806</real>
 	<key>MinimalTabStyleOutlineStrength</key>
-	<real>0.0</real>
+	<real>0.15000000596046448</real>
 	<key>MinimalTabStyleTreatLeftInsetAsPartOfFirstTab</key>
 	<false/>
 	<key>New Bookmarks</key>
@@ -1105,7 +1109,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraCode-Retina 14</string>
+			<string>FiraCode-Regular 16</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -1290,6 +1294,8 @@
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.10000000000000001</real>
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
 	<key>StretchTabsToFillBar</key>
