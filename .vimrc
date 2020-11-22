@@ -6,8 +6,8 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tomasiser/vim-code-dark'
-Plug 'vim-airline/vim-airline'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 Plug 'preservim/nerdtree'
@@ -21,6 +21,10 @@ call plug#end()
 " utf-8
 set encoding=utf-8
 
+" turn off italics in dracula
+let g:dracula_italic = 0
+let g:dracula_colorterm = 0
+
 " enter the current millennium
 set t_Co=256
 set termguicolors
@@ -28,7 +32,7 @@ set nocompatible
 
 " pretty
 syntax enable
-colorscheme codedark
+colorscheme dracula
 
 " enable syntax and plugins
 filetype plugin on
@@ -82,7 +86,7 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 " status line
-let g:airline_theme = 'codedark'
+let g:lightline = { 'colorscheme': 'dracula' }
 set laststatus=2
 set noshowmode
 
