@@ -41,6 +41,7 @@ function install() {
     .gitignore
     .nvm/default-packages
     .prettierrc
+    .config/kitty/kitty.conf
   )
 
   print -P "%F{3}Symlinking%f from %F{4}$DOTFILES_DIR%f"

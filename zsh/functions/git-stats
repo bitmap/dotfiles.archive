@@ -38,7 +38,7 @@ if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
 fi
 
 local -a GIT_INFO
-GIT_INFO+=( "%F{8}%f" )
+GIT_INFO+=( "%F{8}:%f" )
 GIT_INFO+=( "%F{13}$GIT_LOCATION" )
 [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j: :)FLAGS}" )
 echo "${(j: :)GIT_INFO}"
