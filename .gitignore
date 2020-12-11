@@ -6,6 +6,10 @@
 Desktop.ini
 Thumbs.db
 
+# env
+.env
+.env*
+
 # Node.js
 node_modules
 

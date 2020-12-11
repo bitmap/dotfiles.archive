@@ -28,6 +28,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
 echo "\nInstalling Apps and dev tools..."
 brew bundle --file ./macos/Brewfile
 
+echo "\nInstalling Rust..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
 echo "\nSymlinking settings..."
 source ./setup.sh -f
 
