@@ -18,6 +18,11 @@ dist
 build
 out
 .next
+.cache
+
+# Test coverage dirs
+coverage
+.coverage
 
 # Vim
 *.swp
