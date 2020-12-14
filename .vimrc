@@ -65,9 +65,23 @@ set showmatch
 " show filename
 set title
 
-" show line numbers and highlight line
+" show line numbers
 set number
+
+" show highlight line
 set cursorline
+
+" highlight all search results
+set hlsearch
+
+" do case insensitive search
+set ignorecase
+
+" show incremental search results as you type
+set incsearch
+
+" disable swap file
+set noswapfile
 
 " map system keyboard to paster buffer
 set clipboard=unnamedplus
